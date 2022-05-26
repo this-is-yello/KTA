@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대한태권도협회</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="main">
-        <h1 class="main-logo">
-            <figure>
-                <img src="img/main-logo.png" alt="대한태권도협회">
-            </figure>
-            <span>대한태권도협회</span>
-        </h1>
+        <div class="main-background">
+            <h1 class="main-logo">
+                <figure>
+                    <img src="img/main-logo.png" alt="대한태권도협회">
+                </figure>
+                <span>대한태권도협회</span>
+            </h1>
+        </div>
     </div>
 
     <header>
@@ -32,7 +35,7 @@
             </ul>
 
             <label for="search">
-                <input type="text" placeholder="검색어를 입력하세요.">
+                <input type="text" placeholder="키워드를 입력하세요.">
                 <figure class="search-icon">
                     <img src="img/Search-icon.png" alt="검색">
                 </figure>
@@ -123,13 +126,13 @@
             <div class="tech-video-moniter">
                 <div class="tech-video-slide">
                     <div class="video-slide video-slide-1">
-                        <video src="video/Poomsae.mp4"></video>
+                        <video src="video/Poomsae.mp4" autoplay loop></video>
                     </div>
                     <div class="video-slide video-slide-2">
-                        <video src="video/Sparring.mp4"></video>
+                        <video src="video/Sparring.mp4" autoplay loop></video>
                     </div>
                     <div class="video-slide video-slide-3">
-                        <video src="video/Break.mp4"></video>
+                        <video src="video/Break.mp4" autoplay loop></video>
                     </div>
                 </div>
             </div>
@@ -152,17 +155,117 @@
                 </ul>
             </div>
 
-            <div class="dd">
+            <div class="associtaion">
                 <h3>시도지부 및 연맹</h3>
 
+                <div class="associtaion-menu-moniter">
+                    <div class="associtaion-all-slide">
+                        <ul class="associtaion-slide associtaion-slide-1">
+                            <li><a href="">
+                                <img src="img/01STA.png" alt="서울특별시태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/02BTA.png" alt="부산광역시태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/03DTA.png" alt="대구광역시태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/04ITA.png" alt="인천광역시태권도협회">
+                            </a></li>
+                        </ul>
+                        <ul class="associtaion-slide associtaion-slide-2">
+                            <li><a href="">
+                                <img src="img/05GTA.png" alt="광주광역시태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/06DTA.png" alt="대전광역시태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/07UTA.png" alt="울산광역시태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/08STA.png" alt="세종특별자치시태권도협회">
+                            </a></li>
+                        </ul>
+                        <ul class="associtaion-slide associtaion-slide-3">
+                            <li><a href="">
+                                <img src="img/09GTA.png" alt="경기도태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/10GTA.png" alt="강원도태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/11CBTA.png" alt="충북태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/12CNTA.png" alt="충남태권도협회">
+                            </a></li>
+                        </ul>
+                        <ul class="associtaion-slide associtaion-slide-4">
+                            <li><a href="">
+                                <img src="img/13JBTA.png" alt="전라북도태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/14JNTA.png" alt="전라남도태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/15GBTA.png" alt="경북태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/16GTA.png" alt="경남태권도협회">
+                            </a></li>
+                        </ul>
+                        <ul class="associtaion-slide associtaion-slide-5">
+                            <li><a href="">
+                                <img src="img/17JTA.png" alt="제주특별자치도태권도협회">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/18KETF.png" alt="한국초등학교태권도연맹">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/19KJTF.png" alt="한국중고등학교태권도연맹">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/20KTF.png" alt="한국대학태권도연맹">
+                            </a></li>
+                        </ul>
+                        <ul class="associtaion-slide associtaion-slide-6">
+                            <li><a href="">
+                                <img src="img/21KITF.png" alt="한국실업태권도연맹">
+                            </a></li>
+                            <li><a href="">
+                                <img src="img/22KWTF.png" alt="한국여성태권도연맹">
+                            </a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <figure class="Left-black">
+                        <img src="img/Arrow-Left-black.png" alt="이전">
+                    </figure>
+                    <figure class="Right-black">
+                        <img src="img/Arrow-Right-black.png" alt="다음">
+                    </figure>
+                </div>
             </div>
 
             <div class="sponser">
                 <h3>스폰서</h3>
+
                 <ul class="sponser-menu">
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
+                    <li><a href="">
+                        <img src="img/23ADIDAS.png" alt="아디다스">
+                    </a></li>
+                    <li><a href="">
+                        <img src="img/24N&PG.png" alt="한약인(나눔제약)">
+                    </a></li>
+                    <li><a href="">
+                        <img src="img/25HOSPITAL.png" alt="본브릿지병원">
+                    </a></li>
                 </ul>
             </div>
         </div>
