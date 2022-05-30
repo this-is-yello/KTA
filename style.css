@@ -6,15 +6,12 @@
     font-family: 'GothicA1-SemiBold';
     color: var(--main-color);
 }
-
 @font-face {
     font-family: 'GothicA1-SemiBold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/GothicA1-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
 }
-
-
 :root {
     --main-color: #091569;
     --gray-color: #C1C5C4;
@@ -134,6 +131,8 @@ header {
 .goal-slide>p {
     color: var(--white-color);
     font-size: 48px;
+    width: 1280px;
+    text-align: center;
 }
 .goal-slide-1 {
     background-image: url(img/goal-1.png);
@@ -142,7 +141,7 @@ header {
     background-image: url(img/goal-2.png);
 }
 .goal-slide-3 {
-    background-image: url(img/goal-3.png);
+    background-image: url(img/goal-333.png);
 }
 .goal-buttons {
     position: absolute;
@@ -155,16 +154,190 @@ header {
     width: 1280px;
 }
 
+
 .what-is-taekwondo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 979px;
+    background-image: url(img/What-is-1.png);
+    background-size: 100% 979px;
+    background-repeat: no-repeat;
+}
+.what-is-contents {
+    width: 1280px;
+}
+.what-as {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 400px;
+    width: 840px;
+}
+.what-as>li {
+    font-size: 48px;
+    color: var(--gray-color);
+}
+.what-as-contents {
+    padding-top: 20px;
+    font-size: 40px;
+}
+.what-as-contents-1 {
+    display: block;
+}
+.what-as-contents-2 {
+    display: none;
+}
+.what-as-contents-3 {
+    display: none;
+}
+.what-as-contents-4 {
+    display: none;
+}
+
+
+.taekwondo-tech {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 979px;
 }
-.what-is-contents {
-    margin: 0 auto;
-    width: 1280px;
-
+.taekwondo-tech>h3 {
+    font-size: 56px;
+}
+.taekwondo-tech-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 56px;
+    width: 220px;
+}
+.taekwondo-tech-menu>li {
+    font-size: 20px;
+}
+.tech-menu-contents {
+    display: flex;
+    height: 540px;
+}
+.tech-menu-moniter {
+    width: 950px;
+    height: 540px;
+    overflow: hidden;
+}
+.tech-menu-slide {
+    display: flex;
+    width: 2850px;
+}
+.menu-slide {
+    width: 950px;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+}
+.menu-slide>h4 {
+    font-size: 56px;
+    text-align: center;
+    color: var(--white-color);
+    margin-bottom: 64px;
+}
+.menu-slide>p {
+    font-size: 32px;
+    color: var(--white-color);
+    text-align: center;
 }
 
+
+.tech-video-moniter {
+    width: 950px;
+    overflow: hidden;
+}
+.tech-video-slide {
+    width: 2850px;
+    height: 540px;
+    display: flex;
+}
+video {
+    width: 960px;
+}
+
+
+.more-menu {
+    display: flex;
+    justify-content: center;
+}
+.more-menu h3 {
+    font-size: 28px;
+    margin-bottom: 56px;
+}
+.more-menu-contents {
+    display: flex;
+    flex-direction: column;
+    width: 1280px;
+}
+.other-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 1280px;
+    margin-bottom: 80px;
+}
+.other-menu>li {
+    background-image: url(img/other-menu.png);
+    width: 416px;
+    height: 140px;
+}
+.other-menu>li>a {
+    display: block;
+    width: 416px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    font-size: 28px;
+    color: var(--white-color);
+}
+.performance-video-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 1280px;
+    margin-bottom: 80px;
+}
+.performance-video-menu>li:first-child {
+    background-image: url(img/menu-performance.png);
+    width: 632px;
+    height: 140px;
+}
+.performance-video-menu>li:last-child {
+    background-image: url(img/menu-2.png);
+    width: 632px;
+    height: 140px;
+}
+.performance-video-menu>li>a {
+    display: block;
+    width: 632px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    font-size: 28px;
+    color: var(--white-color);
+}
+
+.associtaion-menu-moniter {
+    width: 1280px;
+    height: 140px;
+    overflow: hidden;
+}
+.associtaion-all-slide {
+    display: flex;
+    width: 5120px;
+}
+.associtaion-slide {
+    display: flex;
+    justify-content: space-between;
+    width: 1280px;
+}
 
 
 
