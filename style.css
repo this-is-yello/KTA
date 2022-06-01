@@ -73,22 +73,23 @@ header {
 }
 .nav-bar {
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: 1200px;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 16px;
 }
 .nav-bar>.nav-logo {
     margin-left: 16px;
 }
 .nav-bar-menu {
     display: flex;
-    width: 480px;
+    width: 400px;
     justify-content: space-between;
 }
 .nav-bar-menu>li>a {
-    font-size: 22px;
+    font-size: 20px;
     color: var(--main-color);
 }
 .nav-bar-menu>li>a:hover {
@@ -122,14 +123,15 @@ header {
 .business-goal {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     height: 979px;
+    overflow: hidden;
 }
 .business-goal>h3 {
     margin: 0 auto;
     padding-top: 207px;
     padding-bottom: 32px;
-    width: 1280px;
+    width: 1200px;
     font-size: 36PX;
 }
 .business-goal-moniter {
@@ -157,18 +159,27 @@ header {
 }
 .goal-slide-1 {
     background-image: url(img/goal-1.png);
+    background-size: 100vw 558px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .goal-slide-2 {
     background-image: url(img/goal-2.png);
+    background-size: 100vw 558px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .goal-slide-3 {
     background-image: url(img/goal-3.png);
+    background-size: 100vw 558px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .goal-buttons {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-620px, -26px);
+    transform: translate(-600px, -26px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -192,6 +203,7 @@ header {
     width: 1200px;
     display: flex;
     flex-direction: column;
+    padding: 0 16px;
 }
 .taekwondo-is {
     display: flex;
@@ -207,16 +219,28 @@ header {
     width: 1200px;
     height: 320px;
     background-color: var(--main-color);
+    animation-name: box;
+    animation-duration: 1s;
 }
 .taekwondo-is>.sub>p {
     color: var(--white-color);
     font-size: 40px;
-
+    animation-name: text;
+    animation-duration: 1s;
 }
 .taekwondo-is>h3 {
     display: block;
     font-size: 48px;
     margin-left: 16px;
+}
+.taekwondo-is:hover {
+    cursor: pointer;
+}
+.taekwondo-is:hover>.sub {
+    display: flex;
+}
+.taekwondo-is:hover>h3 {
+    display: none;
 }
 .what-as {
     display: flex;
@@ -236,10 +260,14 @@ header {
     width: 390px;
     height: 320px;
     background-color: var(--main-color);
+    animation-name: box;
+    animation-duration: 1s;
 }
 .what-as .sub>p {
     color: var(--white-color);
     font-size: 20px;
+    animation-name: text;
+    animation-duration: 1s;
 }
 .as-work-out {
     display: flex;
@@ -249,6 +277,15 @@ header {
     height: 320px;
     background-image: url(img/as-work-out.png);
 }
+.as-work-out:hover {
+    cursor: pointer;
+}
+.as-work-out:hover .sub {
+    display: flex;
+}
+.as-work-out:hover h3 {
+    display: none;
+}
 .as-fight {
     display: flex;
     align-items: center;
@@ -257,6 +294,15 @@ header {
     height: 320px;
     background-image: url(img/as-fight.png);
 }
+.as-fight:hover {
+    cursor: pointer;
+}
+.as-fight:hover .sub {
+    display: flex;
+}
+.as-fight:hover h3 {
+    display: none;
+}
 .as-education {
     display: flex;
     align-items: center;
@@ -264,6 +310,34 @@ header {
     width: 390px;
     height: 320px;
     background-image: url(img/as-education.png);
+}
+.as-education:hover {
+    cursor: pointer;
+}
+.as-education:hover .sub {
+    display: flex;
+}
+.as-education:hover h3 {
+    display: none;
+}
+@keyframes box {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes text {
+    from {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -296,11 +370,12 @@ header {
 .tech-menu-contents {
     display: flex;
     width: 1200px;
-    height: 540px;
+    height: 338px;
+    padding: 0 16px;
 }
 .tech-menu-moniter {
     width: 600px;
-    height: 540px;
+    height: 338px;
     overflow: hidden;
 }
 .tech-menu-slide {
@@ -308,8 +383,8 @@ header {
     width: 1800px;
 }
 .menu-slide {
-    width: 50%;
-    height: 540px;
+    width: 600px;
+    height: 338px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -317,18 +392,16 @@ header {
     background-color: var(--main-color);
 }
 .menu-slide>h4 {
-    font-size: 56px;
+    font-size: 48px;
     text-align: center;
     color: var(--white-color);
-    margin-bottom: 64px;
+    margin-bottom: 40px;
 }
 .menu-slide>p {
-    font-size: 32px;
+    font-size: 24px;
     color: var(--white-color);
     text-align: center;
 }
-
-
 .tech-video-moniter {
     width: 600px;
     overflow: hidden;
@@ -340,14 +413,14 @@ header {
 }
 video {
     width: 600px;
+    height: 338px;
 }
 
 
 .more-menu {
     display: flex;
     justify-content: center;
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding: 200px 0;
 }
 .more-menu h3 {
     font-size: 28px;
@@ -356,17 +429,18 @@ video {
 .more-menu-contents {
     display: flex;
     flex-direction: column;
-    width: 1280px;
+    width: 1200px;
+    padding: 0 16px;
 }
 .other-menu {
     display: flex;
     justify-content: space-between;
-    width: 1280px;
+    width: 1200px;
     margin-bottom: 80px;
 }
 .other-menu>li {
     background-image: url(img/other-menu.png);
-    width: 416px;
+    width: 390px;
     height: 140px;
 }
 .other-menu>li:hover {
@@ -375,7 +449,7 @@ video {
 }
 .other-menu>li>a {
     display: block;
-    width: 416px;
+    width: 390px;
     height: 140px;
     line-height: 140px;
     text-align: center;
@@ -385,17 +459,17 @@ video {
 .performance-video-menu {
     display: flex;
     justify-content: space-between;
-    width: 1280px;
+    width: 1200px;
     margin-bottom: 80px;
 }
 .performance-video-menu>li:first-child {
     background-image: url(img/menu-performance.png);
-    width: 632px;
+    width: 592px;
     height: 140px;
 }
 .performance-video-menu>li:last-child {
-    background-image: url(img/menu-2.png);
-    width: 632px;
+    background-image: url(img/menu-video.png);
+    width: 592px;
     height: 140px;
 }
 .performance-video-menu>li:hover {
@@ -404,7 +478,7 @@ video {
 }
 .performance-video-menu>li>a {
     display: block;
-    width: 632px;
+    width: 592px;
     height: 140px;
     line-height: 140px;
     text-align: center;
@@ -418,26 +492,23 @@ video {
     margin-bottom: 80px;
 }
 .associtaion-menu-moniter {
-    width: 1280px;
+    width: 1200px;
     height: 80px;
     overflow: hidden;
 }
 .associtaion-all-slide {
     display: flex;
-    width: 7680px;
+    width: 7200px;
 }
 .associtaion-slide {
-    width: 1280px;
+    width: 1200px;
     height: 80px;
     display: flex;
     justify-content: space-between;
 }
 .associtaion-slide>li>a {
-    width: 308px;
+    width: 288px;
     height: 80px;
-}
-.associtaion-slide>li:hover a {
-    
 }
 .associtaion-buttons {
     position: absolute;
@@ -453,12 +524,12 @@ video {
 .sponser {
     display: flex;
     flex-direction: column;
-    width: 1280px;
+    width: 1200px;
 }
 .sponser-menu {
     display: flex;
     justify-content: space-between;
-    width: 1280px;
+    width: 1200px;
     height: 80px;
 }
 .sponser-menu li:hover {
@@ -472,15 +543,15 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 400px;
+    height: 320px;
     background-color: var(--main-color);
 }
 .footer-contents {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1280px;
-    padding: 16px;
+    width: 1200px;
+    padding: 0 16px;
 }
 .center-line {
     width: 2px;
