@@ -71,28 +71,38 @@
 
     <section class="what-is-taekwondo">
         <div class="what-is-contents">
-            <ul class="what-as">
-                <li>태권도는</li>
-                <li>신체운동</li>
-                <li>맨몸투기</li>
-                <li>교육수단</li>
-            </ul>
-            
-            <div class="what-as-contents what-as-contents-1">
-                <p>남녀노소 제한없이 심신의 단련을 통해<br>인간다운 길을 걷도록 하는 무도이자 스포츠</p>
+            <div class="taekwondo-is">
+                <h3>태권도는</h3>
+                <div class="sub">
+                    <p>남녀노소 제한없이 심신의 단련을 통해<br>인간다운 길을 걷도록 하는 무도이자 스포츠로서<br>아래와 같이 설명할 수있다.</p>
+                </div>
             </div>
-            <div class="what-as-contents what-as-contents-2">
-                <p>어린이의 성장발육,청장년과 노인의 체력증진, 여성의 건강과 미용증진</p>
-                <br>
-                <p>정신적 장애, 스트레스 해소에 큰 도움</p>
-            </div>
-            <div class="what-as-contents what-as-contents-3">
-                <p>맨손과 맨발로 상대방을 타격하는 기술체계</p>
-                <br>
-                <p>수련의 목적은 남을 공격해 제압하려는 것이 아닌, 자기극복과 방어</p>
-            </div>
-            <div class="what-as-contents what-as-contents-4">
-                <p>예의, 염치, 인내, 극기, 백절불굴의 마음가짐</p>
+
+            <div class="what-as">
+                <div class="as-work-out">
+                    <h3>신체운동</h3>
+                    <div class="sub">
+                        <p>어린이의 성장발육,<br>청장년과 노인의 체력증진,<br>여성의 건강과 미용증진<br>
+                            <br>
+                            정신적 장애, 스트레스 해소에 큰 도움
+                        </p>
+                    </div>
+                </div>
+                <div class="as-fight">
+                    <h3>맨몸투기</h3>
+                    <div class="sub">
+                        <p>맨손과 맨발로 상대방을 타격<br>
+                            <br>
+                            수련의 목적은<br>남을 공격해 제압하는 것이 아닌,<br>자기극복과 방어
+                        </p>
+                    </div>
+                </div>
+                <div class="as-education">
+                    <h3>교육수단</h3>
+                    <div class="sub">
+                        <p>예의, 염치, 인내, 극기, 백절불굴의<br>마음가짐</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -311,21 +321,22 @@
         </div>
     </footer>
 
+
     <script>
-        const carouselSlide = document.querySelector(".business-goal-moniter");
+        const goalMoniter = document.querySelector(".business-goal-moniter");
 
-        const slider = document.querySelector(".business-goal-slide");
-        const first = slider.firstElementChild.cloneNode(true);
-        const last = slider.lastElementChild.cloneNode(true);
+        const goalSlide = document.querySelector(".business-goal-slide");
+        const first = goalSlide.firstElementChild.cloneNode(true);
+        const last = goalSlide.lastElementChild.cloneNode(true);
 
-        slider.appendChild(first);
-        slider.insertBefore(last, slider.firstElementChild);
+        goalSlide.appendChild(first);
+        goalSlide.insertBefore(last, goalSlide.firstElementChild);
 
-        const slideWidth = 1920;
+        const slideWidth = 100;
 
         let moveCheck = true;
 
-        slider.style.width = slider.childElementCount * slideWidth + "px";
+        goalSlide.style.width = goalSlide.childElementCount * slideWidth + "vw";
 
 
         const btns = document.querySelector(".goal-buttons");
@@ -333,7 +344,7 @@
         btns.children[1].addEventListener("click", goNext);
 
         let num = 1;
-        carouselSlide.children[0].style.transform = "translateX(-" + (num*1920) + "px)";
+        goalMoniter.children[0].style.transform = "translateX(-" + (num*100) + "vw)";
 
 
 
@@ -348,15 +359,13 @@
 
                 setTimeout(()=> {
                     if(num === 0) {
-                        num=slider.childElementCount-2;
+                        num=goalSlide.childElementCount-2;
                         moveSlide(0);
                     }
 
-                    console.log(num);
                     moveCheck = true;
                 }, 1000);
                 
-                console.log(num);
                 moveSlide(1);
             }
         }
@@ -367,23 +376,21 @@
                 moveCheck = false;
 
                 setTimeout(()=> {
-                    if(num === slider.childElementCount-1) {
+                    if(num === goalSlide.childElementCount-1) {
                         num=1;
                         moveSlide(0);
                     }
 
-                    console.log(num);
                     moveCheck = true;
                 }, 1000);
                 
-                console.log(num);
                 moveSlide(1);
             }
         }
 
         function moveSlide(time) {
-            slider.style.transition = time + "s";
-            carouselSlide.children[0].style.transform = "translateX(-" + (num*1920) + "px)";
+            goalSlide.style.transition = time + "s";
+            goalMoniter.children[0].style.transform = "translateX(-" + (num*100) + "vw)";
         }
     </script>
 </body>
