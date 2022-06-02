@@ -36,13 +36,13 @@ function goPast() {
         setTimeout(()=> {
             if(numA === 0) {
                 numA=goalSlide.childElementCount-2;
-                moveSlide(0);
+                moveSlideA(0);
             }
 
             moveCheckA = true;
         }, 1000);
         
-        moveSlide(1);
+        moveSlideA(1);
     }
 }
 
@@ -54,20 +54,67 @@ function goNext() {
         setTimeout(()=> {
             if(numA === goalSlide.childElementCount-1) {
                 numA=1;
-                moveSlide(0);
+                moveSlideA(0);
             }
 
             moveCheckA = true;
         }, 1000);
         
-        moveSlide(1);
+        moveSlideA(1);
     }
 }
 
-function moveSlide(time) {
+function moveSlideA(time) {
     goalSlide.style.transition = time + "s";
     goalMoniter.children[0].style.transform = "translateX(-" + (numA*100) + "vw)";
 }
 
 
 /* ---------- taekwondo-tech ---------- */
+let index=1;
+let moveCheckB=true;
+
+const videoAllSlide = document.querySelector('.tech-video-slide');
+const vidoSlide = document.querySelectorAll('.video-slide');
+const sliderLength = vidoSlide.length;
+
+let videoFirst = videoAllSlide.firstElementChild.cloneNode(true);
+let videolast = videoAllSlide.lastElementChild.cloneNode(true);
+
+videoAllSlide.appendChild(videoFirst);
+videoAllSlide.insertBefore(videolast, videoAllSlide.firstElementChild);
+
+videoAllSlide.style.transform = "translateX(-" + 600*(index) +"px)";
+videoAllSlide.style.width = 600 * (sliderLength+2) + "px";
+
+menuBtns = document.querySelectorAll('.tech-menu-buttons');
+for (let i=0; i<menuBtns.length; i++){
+    menuBtns[i].addEventListener('click',buttonClick)
+}
+
+menuBtns[index-1].style.color='var(--gray-color)';
+
+function buttonClick(){
+    if(moveCheckB){
+        moveCheckB=false;
+        clearButton();
+        this.style.color='var(--gray-color)';
+        index = this.innerText;
+        moveSlideB(1000);
+        setTimeout(function(){
+            moveCheckB=true;
+        }, 1000);
+    }
+}
+
+function moveSlideB(time){
+    videoAllSlide.style.transition = time +'ms';
+    videoAllSlide.children[0].style.transform = "translateX(-" + 600*(index) +"px)";
+}
+
+function clearButton(){
+    for(let i = 0 ; i < menuBtns.length ; i++){
+        menuBtns[i].style.color='';
+    }
+
+}

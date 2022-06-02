@@ -102,7 +102,8 @@ header {
     color: var(--main-color);
 }
 .nav-bar-menu>li>a:hover {
-    opacity: 0.5;
+    color: var(--gray-color);
+    /* opacity: 0.5; */
     transition: 0.2s;
 }
 .nav-bar>label {
@@ -126,6 +127,10 @@ header {
     display: flex;
     align-items: center;
     height: 32px;
+}
+.nav-bar>label>figure:hover {
+    cursor: pointer;
+    opacity: 0.5;
 }
 
 
@@ -235,7 +240,7 @@ header {
     color: var(--white-color);
     font-size: 40px;
     animation-name: text;
-    animation-duration: 1.5s;
+    animation-duration: 1.2s;
 }
 .taekwondo-is>h3 {
     display: block;
@@ -348,7 +353,8 @@ header {
 }
 .taekwondo-tech-menu>li:hover {
     cursor: pointer;
-    opacity: 0.5;
+    color: var(--gray-color);
+    /* opacity: 0.5; */
     transition: 0.2s;
 }
 .tech-menu-contents {
@@ -391,7 +397,7 @@ header {
     overflow: hidden;
 }
 .tech-video-slide {
-    width: 1800px;
+    width: 3000px;
     height: 338px;
     display: flex;
 }
@@ -428,7 +434,7 @@ video {
     height: 140px;
 }
 .other-menu>li:hover {
-    box-shadow: 10px 10px 10px var(--gray-color);
+    opacity: 0.5;
     transition: 0.2s;
 }
 .other-menu>li>a {
@@ -457,7 +463,7 @@ video {
     height: 140px;
 }
 .performance-video-menu>li:hover {
-    box-shadow: 10px 10px 10px var(--gray-color);
+    opacity: 0.5;
     transition: 0.2s;
 }
 .performance-video-menu>li>a {
@@ -474,6 +480,10 @@ video {
     display: flex;
     flex-direction: column;
     margin-bottom: 80px;
+}
+.associtaion li:hover {
+    opacity: 0.5;
+    transition: 0.2s;
 }
 .associtaion-menu-moniter {
     width: 1200px;
@@ -517,7 +527,7 @@ video {
     height: 80px;
 }
 .sponser-menu li:hover {
-    box-shadow: 10px 10px 10px var(--gray-color);
+    opacity: 0.5;
     transition: 0.2s;
 }
 
@@ -551,7 +561,7 @@ footer {
     margin-bottom: 20px;
 }
 .sns-icon li:hover {
-    opacity: 0.7;
+    opacity: 0.5;
     transition: 0.2s;
 }
 .footer-menu {
