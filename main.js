@@ -2,25 +2,25 @@
 const goalMoniter = document.querySelector(".business-goal-moniter");
 
 const goalSlide = document.querySelector(".business-goal-slide");
-const first = goalSlide.firstElementChild.cloneNode(true);
-const last = goalSlide.lastElementChild.cloneNode(true);
+const goalFirst = goalSlide.firstElementChild.cloneNode(true);
+const goalLast = goalSlide.lastElementChild.cloneNode(true);
 
-goalSlide.appendChild(first);
-goalSlide.insertBefore(last, goalSlide.firstElementChild);
+goalSlide.appendChild(goalFirst);
+goalSlide.insertBefore(goalLast, goalSlide.firstElementChild);
 
-const slideWidth = 100;
+const goalSlideWidth = 100;
 
-let moveCheck = true;
+let moveCheckA = true;
 
-goalSlide.style.width = goalSlide.childElementCount * slideWidth + "vw";
+goalSlide.style.width = goalSlide.childElementCount * goalSlideWidth + "vw";
 
 
-const btns = document.querySelector(".goal-buttons");
-btns.children[0].addEventListener("click", goPast);
-btns.children[1].addEventListener("click", goNext);
+const goalBtns = document.querySelector(".goal-buttons");
+goalBtns.children[0].addEventListener("click", goPast);
+goalBtns.children[1].addEventListener("click", goNext);
 
-let num = 1;
-goalMoniter.children[0].style.transform = "translateX(-" + (num*100) + "vw)";
+let numA = 1;
+goalMoniter.children[0].style.transform = "translateX(-" + (numA*100) + "vw)";
 
 
 
@@ -29,17 +29,17 @@ let inter = setInterval(() => {
 }, 3000);
 
 function goPast() {
-    if(moveCheck) {
-        num--;
-        moveCheck = false;
+    if(moveCheckA) {
+        numA--;
+        moveCheckA = false;
 
         setTimeout(()=> {
-            if(num === 0) {
-                num=goalSlide.childElementCount-2;
+            if(numA === 0) {
+                numA=goalSlide.childElementCount-2;
                 moveSlide(0);
             }
 
-            moveCheck = true;
+            moveCheckA = true;
         }, 1000);
         
         moveSlide(1);
@@ -47,17 +47,17 @@ function goPast() {
 }
 
 function goNext() {
-    if(moveCheck) {
-        num++;
-        moveCheck = false;
+    if(moveCheckA) {
+        numA++;
+        moveCheckA = false;
 
         setTimeout(()=> {
-            if(num === goalSlide.childElementCount-1) {
-                num=1;
+            if(numA === goalSlide.childElementCount-1) {
+                numA=1;
                 moveSlide(0);
             }
 
-            moveCheck = true;
+            moveCheckA = true;
         }, 1000);
         
         moveSlide(1);
@@ -66,5 +66,8 @@ function goNext() {
 
 function moveSlide(time) {
     goalSlide.style.transition = time + "s";
-    goalMoniter.children[0].style.transform = "translateX(-" + (num*100) + "vw)";
+    goalMoniter.children[0].style.transform = "translateX(-" + (numA*100) + "vw)";
 }
+
+
+/* ---------- taekwondo-tech ---------- */

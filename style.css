@@ -46,7 +46,7 @@ h3 {
     width: 400vw;
     height: 400vh;
     transform: rotate(15deg) translate(-50%, 0%);
-    animation: to-top infinite 15s linear;
+    animation: to-top infinite 20s linear;
     background-color: #a5a5a5;
 }
 .main-logo {
@@ -61,6 +61,15 @@ h3 {
     clip: rect(1px 1px 1px 1px);
     overflow: hidden;
     clip-path: inset(50%);
+}
+@keyframes to-top {
+    from {
+        
+        transform: rotate(15deg) translate(-50%, 0%);
+    }
+    to{
+        transform: rotate(15deg) translate(-50%, -20%);
+    }
 }
 
 
@@ -220,13 +229,13 @@ header {
     height: 320px;
     background-color: var(--main-color);
     animation-name: box;
-    animation-duration: 1s;
+    animation-duration: 0.7s;
 }
 .taekwondo-is>.sub>p {
     color: var(--white-color);
     font-size: 40px;
     animation-name: text;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
 }
 .taekwondo-is>h3 {
     display: block;
@@ -250,6 +259,8 @@ header {
     margin-top: 16px;
 }
 .what-as h3 {
+    width: 100%;
+    text-align: center;
     display: block;
     font-size: 40px;
 }
@@ -261,7 +272,7 @@ header {
     height: 320px;
     background-color: var(--main-color);
     animation-name: box;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
 }
 .what-as .sub>p {
     color: var(--white-color);
@@ -269,55 +280,28 @@ header {
     animation-name: text;
     animation-duration: 1s;
 }
-.as-work-out {
+.as-something {
     display: flex;
     align-items: center;
-    justify-content: center;
     width: 390px;
     height: 320px;
+}
+.as-work-out {
     background-image: url(img/as-work-out.png);
 }
-.as-work-out:hover {
-    cursor: pointer;
-}
-.as-work-out:hover .sub {
-    display: flex;
-}
-.as-work-out:hover h3 {
-    display: none;
-}
 .as-fight {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 390px;
-    height: 320px;
     background-image: url(img/as-fight.png);
 }
-.as-fight:hover {
-    cursor: pointer;
-}
-.as-fight:hover .sub {
-    display: flex;
-}
-.as-fight:hover h3 {
-    display: none;
-}
 .as-education {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 390px;
-    height: 320px;
     background-image: url(img/as-education.png);
 }
-.as-education:hover {
+.as-something:hover {
     cursor: pointer;
 }
-.as-education:hover .sub {
+.as-something:hover .sub {
     display: flex;
 }
-.as-education:hover h3 {
+.as-something:hover h3 {
     display: none;
 }
 @keyframes box {
@@ -408,7 +392,7 @@ header {
 }
 .tech-video-slide {
     width: 1800px;
-    height: 540px;
+    height: 338px;
     display: flex;
 }
 video {
@@ -596,15 +580,4 @@ footer {
 }
 .copyright {
     color: var(--gray-color);
-}
-
-
-@keyframes to-top {
-    from {
-        
-        transform: rotate(15deg) translate(-50%, 0%);
-    }
-    to{
-        transform: rotate(15deg) translate(-50%, -20%);
-    }
 }
