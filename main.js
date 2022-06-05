@@ -71,50 +71,52 @@ function moveSlideA(time) {
 
 
 /* ---------- taekwondo-tech ---------- */
-let index=1;
-let moveCheckB=true;
 
-const videoAllSlide = document.querySelector('.tech-video-slide');
-const vidoSlide = document.querySelectorAll('.video-slide');
-const sliderLength = vidoSlide.length;
 
-let videoFirst = videoAllSlide.firstElementChild.cloneNode(true);
-let videolast = videoAllSlide.lastElementChild.cloneNode(true);
 
-videoAllSlide.appendChild(videoFirst);
-videoAllSlide.insertBefore(videolast, videoAllSlide.firstElementChild);
+/* ---------- associtaion ---------- */
+const associtaionMoniter = document.querySelector(".associtaion-menu-moniter");
 
-videoAllSlide.style.transform = "translateX(-" + 600*(index) +"px)";
-videoAllSlide.style.width = 600 * (sliderLength+2) + "px";
+const associtaionSlide = document.querySelector(".associtaion-all-slide");
+const associtaionFirst = associtaionSlide.firstElementChild.cloneNode(true);
+const associtaionLast = associtaionSlide.lastElementChild.cloneNode(true);
 
-menuBtns = document.querySelectorAll('.tech-menu-buttons');
-for (let i=0; i<menuBtns.length; i++){
-    menuBtns[i].addEventListener('click',buttonClick)
-}
+associtaionSlide.appendChild(associtaionFirst);
+associtaionSlide.insertBefore(associtaionLast, associtaionSlide.firstElementChild);
 
-menuBtns[index-1].style.color='var(--gray-color)';
+const associtaionSlideHeight = 80;
 
-function buttonClick(){
-    if(moveCheckB){
-        moveCheckB=false;
-        clearButton();
-        this.style.color='var(--gray-color)';
-        index = this.innerText;
-        moveSlideB(1000);
-        setTimeout(function(){
-            moveCheckB=true;
+let moveCheckC = true;
+
+associtaionSlide.style.height = associtaionSlide.childElementCount * associtaionSlideHeight + "px";
+
+
+const associtaionBtns = document.querySelector(".associtaion-buttons");
+associtaionBtns.children[0].addEventListener("click", goDown);
+
+let numC = 1;
+associtaionMoniter.children[0].style.transform = "translateY(-" + (numC*80) + "px)";
+
+
+function goDown() {
+    if(moveCheckC) {
+        numC++;
+        moveCheckC = false;
+
+        setTimeout(()=> {
+            if(numC === associtaionSlide.childElementCount-1) {
+                numC=1;
+                moveSlideC(0);
+            }
+
+            moveCheckC = true;
         }, 1000);
+        
+        moveSlideC(1);
     }
 }
 
-function moveSlideB(time){
-    videoAllSlide.style.transition = time +'ms';
-    videoAllSlide.children[0].style.transform = "translateX(-" + 600*(index) +"px)";
-}
-
-function clearButton(){
-    for(let i = 0 ; i < menuBtns.length ; i++){
-        menuBtns[i].style.color='';
-    }
-
+function moveSlideC(time) {
+    associtaionSlide.style.transition = time + "s";
+    associtaionMoniter.children[0].style.transform = "translateY(-" + (numC*80) + "px)";
 }

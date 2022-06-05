@@ -479,6 +479,7 @@ video {
 .associtaion {
     display: flex;
     flex-direction: column;
+    width: 1200px;
     margin-bottom: 80px;
 }
 .associtaion li:hover {
@@ -486,13 +487,17 @@ video {
     transition: 0.2s;
 }
 .associtaion-menu-moniter {
+    display: flex;
+    justify-content: space-between;
     width: 1200px;
     height: 80px;
     overflow: hidden;
 }
 .associtaion-all-slide {
     display: flex;
-    width: 7200px;
+    flex-direction: column;
+    width: 1200px;
+    height: 480px;
 }
 .associtaion-slide {
     width: 1200px;
@@ -500,20 +505,27 @@ video {
     display: flex;
     justify-content: space-between;
 }
+.associtaion-slide>li {
+    width: 288px;
+    height: 80px;
+}
 .associtaion-slide>li>a {
     width: 288px;
     height: 80px;
 }
 .associtaion-buttons {
-    position: absolute;
-    margin-top: 111px;
     display: flex;
-    justify-content: space-between;
-    width: 1280px;
+    justify-content: center;
+    width: 1200px;
     height: 40px;
-    opacity: 0.7;
-    display: none;
+    padding: 16px 0;
 }
+.associtaion-buttons>figure:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.2s;
+}
+
 
 .sponser {
     display: flex;
