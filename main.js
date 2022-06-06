@@ -123,3 +123,16 @@ function moveSlideC(time) {
     associtaionSlide.style.transition = time + "s";
     associtaionMoniter.children[0].style.transform = "translateY(-" + (numC*96) + "px)";
 }
+
+
+/* ---------- nav-bar ---------- */
+window.onscroll=scrollF();
+
+function scrollF() {
+    if(document.body.scrollTop>80 || document.documentElement.scrollTop>80) {
+        document.getElementsByTagName("header").style.top="0";
+    }
+    else {
+        document.getElementsByTagName("header").style.top="-80px";
+    }
+}
