@@ -24,7 +24,7 @@ goalMoniter.children[0].style.transform = "translateX(-" + (numA*100) + "vw)";
 
 
 
-let inter = setInterval(() => {
+let interA = setInterval(() => {
     goNext();
 }, 3000);
 
@@ -84,7 +84,7 @@ const associtaionLast = associtaionSlide.lastElementChild.cloneNode(true);
 associtaionSlide.appendChild(associtaionFirst);
 associtaionSlide.insertBefore(associtaionLast, associtaionSlide.firstElementChild);
 
-const associtaionSlideHeight = 80;
+const associtaionSlideHeight = 96;
 
 let moveCheckC = true;
 
@@ -95,8 +95,11 @@ const associtaionBtns = document.querySelector(".associtaion-buttons");
 associtaionBtns.children[0].addEventListener("click", goDown);
 
 let numC = 1;
-associtaionMoniter.children[0].style.transform = "translateY(-" + (numC*80) + "px)";
+associtaionMoniter.children[0].style.transform = "translateY(-" + (numC*96) + "px)";
 
+let interC = setInterval(() => {
+    goDown();
+}, 4000);
 
 function goDown() {
     if(moveCheckC) {
@@ -118,5 +121,5 @@ function goDown() {
 
 function moveSlideC(time) {
     associtaionSlide.style.transition = time + "s";
-    associtaionMoniter.children[0].style.transform = "translateY(-" + (numC*80) + "px)";
+    associtaionMoniter.children[0].style.transform = "translateY(-" + (numC*96) + "px)";
 }

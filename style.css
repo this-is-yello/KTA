@@ -504,6 +504,7 @@ video {
     height: 80px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 16px;
 }
 .associtaion-slide>li {
     width: 288px;
