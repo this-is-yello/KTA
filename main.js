@@ -126,13 +126,74 @@ function moveSlideC(time) {
 
 
 /* ---------- nav-bar ---------- */
-window.onscroll=scrollF();
+const header = document.querySelector("header");
+const headerHeight = header.getBoundingClientRect().height;
 
-function scrollF() {
-    if(document.body.scrollTop>80 || document.documentElement.scrollTop>80) {
-        document.getElementsByTagName("header").style.top="0";
+window.addEventListener("scroll", () => {
+    if(window.scrollY>headerHeight) {
+        header.setAttribute("style", "opacity: 1");
     }
     else {
-        document.getElementsByTagName("header").style.top="-80px";
+        header.setAttribute("style", "opacity: 0");
     }
+});
+
+const locationMain = document.querySelector(".main").offsetTop;
+const locationGoal = document.querySelector(".business-goal").offsetTop;
+const locationWhat = document.querySelector(".what-is-taekwondo").offsetTop;
+const locationTech = document.querySelector(".taekwondo-tech").offsetTop;
+const locationMenu = document.querySelector(".more-menu").offsetTop;
+
+const sections = document.getElementsByClassName('section');
+
+const navBar = document.querySelector(".nav-bar");
+
+for( let i = 0 ; i < navBar.childElementCount ; i ++) {
+    navBar.children[i].addEventListener('click', () => {
+        window.scrollTo({top:sections[i].offsetTop, behavior: "smooth"})
+        console.log(`${sections[i]} 이고 ${sections[i].offsetTop}`)
+    })
 }
+
+// const goal = document.querySelector(".nav-bar-menu").children[0];
+// const what = document.querySelector(".nav-bar-menu").children[1];
+// const tech = document.querySelector(".nav-bar-menu").children[2];
+// const menu = document.querySelector(".nav-bar-menu").children[3];
+
+// logo.addEventListener("click", goMain);
+// function goMain() {
+//     window.scrollTo({top:locationMain, behavior: "smooth"})
+// }
+// goal.addEventListener("click", goGoal);
+// function goGoal() {
+//     window.scrollTo({top:locationGoal, behavior: "smooth"})
+// }
+// what.addEventListener("click", goWhat);
+// function goWhat() {
+//     window.scrollTo({top:locationWhat, behavior: "smooth"})
+// }
+// tech.addEventListener("click", goTech);
+// function goTech() {
+//     window.scrollTo({top:locationTech, behavior: "smooth"})
+// }
+// menu.addEventListener("click", goMenu);
+// function goMenu() {
+//     window.scrollTo({top:locationMenu, behavior: "smooth"})
+// }
+
+
+
+// /* ---------- scroll ---------- */
+// const section = document.querySelectorAll(".section");
+// const sectionHeight = section.getBoundingClientRect().height;
+
+
+
+
+
+/*  */
+//https://enai.tistory.com/33
+
+
+/* scroll */
+//https://velog.io/@jaenny/JavaScript-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%8B%9C-%ED%95%9C-%EC%84%B9%EC%85%98%EC%94%A9-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B2%8C-%ED%95%98%EA%B8%B0
