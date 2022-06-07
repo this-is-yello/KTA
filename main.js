@@ -138,7 +138,6 @@ window.addEventListener("scroll", () => {
     }
 });
 
-const locationMain = document.querySelector(".main").offsetTop;
 const locationGoal = document.querySelector(".business-goal").offsetTop;
 const locationWhat = document.querySelector(".what-is-taekwondo").offsetTop;
 const locationTech = document.querySelector(".taekwondo-tech").offsetTop;
@@ -182,6 +181,26 @@ for( let i = 0 ; i < navBar.childElementCount ; i ++) {
 // }
 
 
+/* ---------- go-to-main ---------- */
+const locationMain = document.querySelector(".main");
+
+const toMain = document.querySelector(".go-to-main");
+
+toMain.addEventListener("click", goMain);
+function goMain() {
+    window.scrollTo({top:locationMain.offsetTop, behavior: "smooth"});
+}
+
+const hideHeight = locationMain.getBoundingClientRect().height;
+
+window.addEventListener("scroll", () => {
+    if(window.scrollY>hideHeight) {
+        toMain.setAttribute("style", "opacity: 1");
+    }
+    else {
+        toMain.setAttribute("style", "opacity: 0");
+    }
+});
 
 // /* ---------- scroll ---------- */
 // const section = document.querySelectorAll(".section");
