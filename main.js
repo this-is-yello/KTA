@@ -71,7 +71,19 @@ function moveSlideA(time) {
 
 
 /* ---------- taekwondo-tech ---------- */
+const techMoniter = document.querySelector(".tech-video-moniter");
 
+const techSlide = document.querySelector(".tech-video-slide");
+const techSlideWidth = 600;
+
+const techBtns = document.querySelector(".taekwondo-tech-menu");
+const techFirst = techSlide.firstElementChild.cloneNode(true);
+const techLast = techSlide.lastElementChild.cloneNode(true);
+
+const sliderLength = techSlide.childElementCount;
+
+let numB = 1;
+let moveCheckB = true;
 
 
 /* ---------- associtaion ---------- */
@@ -138,19 +150,14 @@ window.addEventListener("scroll", () => {
     }
 });
 
-const locationGoal = document.querySelector(".business-goal").offsetTop;
-const locationWhat = document.querySelector(".what-is-taekwondo").offsetTop;
-const locationTech = document.querySelector(".taekwondo-tech").offsetTop;
-const locationMenu = document.querySelector(".more-menu").offsetTop;
-
 const sections = document.getElementsByClassName('section');
 
-const navBar = document.querySelector(".nav-bar");
+const navBar = document.querySelector(".nav-bar-menu");
 
-for( let i = 0 ; i < navBar.childElementCount ; i ++) {
+for(let i=0; i<navBar.childElementCount; i ++) {
     navBar.children[i].addEventListener('click', () => {
-        window.scrollTo({top:sections[i].offsetTop, behavior: "smooth"})
-        console.log(`${sections[i]} 이고 ${sections[i].offsetTop}`)
+        window.scrollTo({top:sections[i].offsetTop, behavior: "smooth"});
+        console.log(`${sections[i]} 이고 ${sections[i].offsetTop}`);
     })
 }
 
@@ -182,7 +189,7 @@ for( let i = 0 ; i < navBar.childElementCount ; i ++) {
 
 
 /* ---------- go-to-main ---------- */
-const locationMain = document.querySelector(".main");
+const locationMain = document.getElementById("main");
 
 const toMain = document.querySelector(".go-to-main");
 
@@ -191,7 +198,7 @@ function goMain() {
     window.scrollTo({top:locationMain.offsetTop, behavior: "smooth"});
 }
 
-const hideHeight = locationMain.getBoundingClientRect().height;
+const hideHeight = toMain.getBoundingClientRect().height;
 
 window.addEventListener("scroll", () => {
     if(window.scrollY>hideHeight) {
