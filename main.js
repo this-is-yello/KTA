@@ -1,91 +1,114 @@
 /* ---------- business-goal ---------- */
-const goalMoniter = document.querySelector(".business-goal-moniter");
+bussinessGoal();
 
-const goalSlide = document.querySelector(".business-goal-slide");
-const goalFirst = goalSlide.firstElementChild.cloneNode(true);
-const goalLast = goalSlide.lastElementChild.cloneNode(true);
-
-goalSlide.appendChild(goalFirst);
-goalSlide.insertBefore(goalLast, goalSlide.firstElementChild);
-
-const goalSlideWidth = 100;
-
-let moveCheckA = true;
-
-goalSlide.style.width = goalSlide.childElementCount * goalSlideWidth + "vw";
-
-
-const goalBtns = document.querySelector(".goal-buttons");
-goalBtns.children[0].addEventListener("click", goPast);
-goalBtns.children[1].addEventListener("click", goNext);
-
-let numA = 1;
-goalMoniter.children[0].style.transform = "translateX(-" + (numA*100) + "vw)";
-
-
-
-let interA = setInterval(() => {
-    goNext();
-}, 3000);
-
-function goPast() {
-    if(moveCheckA) {
-        numA--;
-        moveCheckA = false;
-
-        setTimeout(()=> {
-            if(numA === 0) {
-                numA=goalSlide.childElementCount-2;
-                moveSlideA(0);
-            }
-
-            moveCheckA = true;
-        }, 1000);
-        
-        moveSlideA(1);
+function bussinessGoal() {
+    const goalMoniter = document.querySelector(".business-goal-moniter");
+    
+    const goalSlide = document.querySelector(".business-goal-slide");
+    const goalFirst = goalSlide.firstElementChild.cloneNode(true);
+    const goalLast = goalSlide.lastElementChild.cloneNode(true);
+    
+    goalSlide.appendChild(goalFirst);
+    goalSlide.insertBefore(goalLast, goalSlide.firstElementChild);
+    
+    const goalSlideWidth = 100;
+    
+    let moveCheck = true;
+    
+    goalSlide.style.width = goalSlide.childElementCount * goalSlideWidth + "vw";
+    
+    
+    const goalBtns = document.querySelector(".goal-buttons");
+    goalBtns.children[0].addEventListener("click", goPast);
+    goalBtns.children[1].addEventListener("click", goNext);
+    
+    let num = 1;
+    goalMoniter.children[0].style.transform = "translateX(-" + (num*100) + "vw)";
+    
+    
+    let inter = setInterval(() => {
+        goNext();
+    }, 3000);
+    
+    function goPast() {
+        if(moveCheck) {
+            num--;
+            moveCheck = false;
+            
+            setTimeout(()=> {
+                if(num === 0) {
+                    num=goalSlide.childElementCount-2;
+                    moveSlide(0);
+                }
+                
+                moveCheck = true;
+            }, 1000);
+            
+            moveSlide(1);
+        }
     }
-}
-
-function goNext() {
-    if(moveCheckA) {
-        numA++;
-        moveCheckA = false;
-
-        setTimeout(()=> {
-            if(numA === goalSlide.childElementCount-1) {
-                numA=1;
-                moveSlideA(0);
-            }
-
-            moveCheckA = true;
-        }, 1000);
-        
-        moveSlideA(1);
+    
+    function goNext() {
+        if(moveCheck) {
+            num++;
+            moveCheck = false;
+            
+            setTimeout(()=> {
+                if(num === goalSlide.childElementCount-1) {
+                    num=1;
+                    moveSlide(0);
+                }
+                
+                moveCheck = true;
+            }, 1000);
+            
+            moveSlide(1);
+        }
     }
+    
+    function moveSlide(time) {
+        goalSlide.style.transition = time + "s";
+        goalMoniter.children[0].style.transform = "translateX(-" + (num*100) + "vw)";
+    }
+    
 }
-
-function moveSlideA(time) {
-    goalSlide.style.transition = time + "s";
-    goalMoniter.children[0].style.transform = "translateX(-" + (numA*100) + "vw)";
-}
-
-
+    
+    
+    
+    
+    
+    
 /* ---------- taekwondo-tech ---------- */
-const techMoniter = document.querySelector(".tech-video-moniter");
+// taekwondoTech();
 
-const techSlide = document.querySelector(".tech-video-slide");
-const techSlideWidth = 600;
-
-const techBtns = document.querySelector(".taekwondo-tech-menu");
-const techFirst = techSlide.firstElementChild.cloneNode(true);
-const techLast = techSlide.lastElementChild.cloneNode(true);
-
-const sliderLength = techSlide.childElementCount;
-
-let numB = 1;
-let moveCheckB = true;
-
-
+// function taekwondoTech() { 
+    const techBtns = document.querySelector(".taekwondo-tech-menu");
+    const techSlide = document.querySelector(".tech-video-slide");
+    const menuSlide = document.querySelector(".tech-menu-slide");
+    let moveCheck = true;
+    // let numB = 0;
+    
+    // techBtns.children[numB].addEventListener("click", () => {
+    //     if() {
+        
+    // });
+    for(let i=0; i<techBtns.childElementCount; i++) {
+        if(moveCheck) {
+            moveCheck = false;
+            
+            techBtns.children[i].addEventListener("click", () => {
+                techSlide.children[i].classList.add('from-left');
+            })
+        }
+        
+        moveCheck = true;
+    }
+        
+// }
+            
+            
+            
+            
 /* ---------- associtaion ---------- */
 const associtaionMoniter = document.querySelector(".associtaion-menu-moniter");
 
@@ -99,7 +122,7 @@ associtaionSlide.insertBefore(associtaionLast, associtaionSlide.firstElementChil
 const associtaionSlideHeight = 96;
 
 let moveCheckC = true;
-
+            
 associtaionSlide.style.height = associtaionSlide.childElementCount * associtaionSlideHeight + "px";
 
 
