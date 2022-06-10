@@ -370,11 +370,14 @@ header {
     overflow: hidden;
 }
 .tech-menu-slide {
-    display: flex;
     width: 600px;
+    height: 338px;
     position: relative;
 }
 .menu-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 600px;
     height: 338px;
     display: flex;
@@ -382,8 +385,7 @@ header {
     align-items: center;
     justify-content: center;
     background-color: var(--main-color);
-    position: absolute;
-    transition: 0.5;
+    transition: 0.5s;
 }
 .menu-slide>h4 {
     font-size: 48px;
@@ -403,7 +405,6 @@ header {
 .tech-video-slide {
     width: 600px;
     height: 338px;
-    display: flex;
     position: relative;
 }
 .video-slide {
@@ -416,12 +417,12 @@ video {
     width: 600px;
     height: 338px;
 }
-.from-left {
-    transform: translateX(-600px);
+.in-out-left {
+    transform: translateX(-300px);
     opacity: 0;
 }
-.to-right {
-    transform: translateX(600px);
+.in-out-right {
+    transform: translateX(300px);
     opacity: 0;
 }
 
