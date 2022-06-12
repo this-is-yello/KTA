@@ -71,68 +71,69 @@ function bussinessGoal() {
   }
 }
 
+
 /* ---------- taekwondo-tech ---------- */
-const techBtns = document.querySelector(".taekwondo-tech-menu");
-const techSlide = document.querySelector(".tech-video-slide");
-const menuSlide = document.querySelector(".tech-menu-slide");
-let moveCheck = true;
+taekwondoTech();
 
-// taekwondoTech();
+function taekwondoTech() {
+  const techBtns = document.querySelector(".taekwondo-tech-menu");
+  const techSlide = document.querySelector(".tech-video-slide");
+  const menuSlide = document.querySelector(".tech-menu-slide");
+  let moveCheck = true;
 
-// function taekwondoTech() {
   for (let i = 0; i < techBtns.childElementCount; i++) {
     techBtns.children[i].addEventListener("click", () => {
-      if (techSlide.children[i].classList.contains("in-out-left") && menuSlide.children[k].classList.contains("in-out-left")) {
+      if (techSlide.children[i].classList.contains("in-out-left")) {
         if (moveCheck) {
           moveCheck = false;
           for (let j = 0; j < techBtns.childElementCount; j++) {
             if (!techSlide.children[j].classList.contains("in-out-left")) {
               techSlide.children[j].classList.add("in-out-right");
+              menuSlide.children[j].classList.add("in-out-right");
               setTimeout(() => {
                 if (techSlide.children[j].classList.contains("in-out-right")) {
                   techSlide.children[j].classList.remove("in-out-right");
                   techSlide.children[j].classList.add("in-out-left");
                 }
+                if (menuSlide.children[j].classList.contains("in-out-right")) {
+                  menuSlide.children[j].classList.remove("in-out-right");
+                  menuSlide.children[j].classList.add("in-out-left");
+                }
               }, 500);
             }
           }
-          
           setTimeout(() => {
             moveCheck = true;
           }, 500);
           techSlide.children[i].classList.remove("in-out-left");
+          menuSlide.children[i].classList.remove("in-out-left");
         }
       }
+
+      // if (menuSlide.children[i].classList.contains("in-out-left")) {
+      //   if (moveCheck) {
+      //     moveCheck = false;
+      //     for (let k = 0; k < techBtns.childElementCount; k++) {
+      //       if (!menuSlide.children[k].classList.contains("in-out-left")) {
+      //         menuSlide.children[k].classList.add("in-out-right");
+      //         setTimeout(() => {
+      //           if (menuSlide.children[k].classList.contains("in-out-right")) {
+      //             menuSlide.children[k].classList.remove("in-out-right");
+      //             menuSlide.children[k].classList.add("in-out-left");
+      //           }
+      //         }, 500);
+      //       }
+      //     }
+      //     setTimeout(() => {
+      //       moveCheck = true;
+      //     }, 500);
+      //     menuSlide.children[i].classList.remove("in-out-left");
+      //   }
+      // }
     });
   }
+}
 
-
-
-  // for (let k = 0; k < techBtns.childElementCount; k++) {
-  //   techBtns.children[k].addEventListener("click", () => {
-  //     if (menuSlide.children[k].classList.contains("in-out-left")) {
-  //       if (moveCheck) {
-  //         moveCheck = false;
-  //         for (let l= 0; l < techBtns.childElementCount; l++) {
-  //           if (!menuSlide.children[l].classList.contains("in-out-left")) {
-  //             menuSlide.children[l].classList.add("in-out-right");
-  //             setTimeout(() => {
-  //               if (menuSlide.children[l].classList.contains("in-out-right")) {
-  //                 menuSlide.children[l].classList.remove("in-out-right");
-  //                 menuSlide.children[l].classList.add("in-out-left");
-  //               }
-  //             }, 500);
-  //           }
-  //         }
-  //         setTimeout(() => {
-  //           moveCheck = true;
-  //         }, 500);
-  //         menuSlide.children[k].classList.remove("in-out-left");
-  //       }
-  //     }
-  //   });
-  // } 
-// }
 
 /* ---------- associtaion ---------- */
 const associtaionMoniter = document.querySelector(".associtaion-menu-moniter");
@@ -189,6 +190,7 @@ function moveSlideC(time) {
     "translateY(-" + numC * 96 + "px)";
 }
 
+
 /* ---------- nav-bar ---------- */
 const header = document.querySelector("header");
 const headerHeight = header.getBoundingClientRect().height;
@@ -208,35 +210,9 @@ const navBar = document.querySelector(".nav-bar-menu");
 for (let i = 0; i < navBar.childElementCount; i++) {
   navBar.children[i].addEventListener("click", () => {
     window.scrollTo({ top: sections[i].offsetTop, behavior: "smooth" });
-    console.log(`${sections[i]} 이고 ${sections[i].offsetTop}`);
   });
 }
 
-// const goal = document.querySelector(".nav-bar-menu").children[0];
-// const what = document.querySelector(".nav-bar-menu").children[1];
-// const tech = document.querySelector(".nav-bar-menu").children[2];
-// const menu = document.querySelector(".nav-bar-menu").children[3];
-
-// logo.addEventListener("click", goMain);
-// function goMain() {
-//     window.scrollTo({top:locationMain, behavior: "smooth"})
-// }
-// goal.addEventListener("click", goGoal);
-// function goGoal() {
-//     window.scrollTo({top:locationGoal, behavior: "smooth"})
-// }
-// what.addEventListener("click", goWhat);
-// function goWhat() {
-//     window.scrollTo({top:locationWhat, behavior: "smooth"})
-// }
-// tech.addEventListener("click", goTech);
-// function goTech() {
-//     window.scrollTo({top:locationTech, behavior: "smooth"})
-// }
-// menu.addEventListener("click", goMenu);
-// function goMenu() {
-//     window.scrollTo({top:locationMenu, behavior: "smooth"})
-// }
 
 /* ---------- go-to-main ---------- */
 const locationMain = document.getElementById("main");
@@ -258,7 +234,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// /* ---------- scroll ---------- */
+/* ---------- scroll ---------- */
 // const section = document.querySelectorAll(".section");
 // const sectionHeight = section.getBoundingClientRect().height;
 

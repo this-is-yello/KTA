@@ -362,7 +362,7 @@ header {
     display: flex;
     width: 1200px;
     height: 338px;
-    padding: 0 16px;
+    background-color: var(--main-color);
 }
 .tech-menu-moniter {
     width: 600px;
@@ -418,11 +418,11 @@ video {
     height: 338px;
 }
 .in-out-left {
-    transform: translateX(-300px);
+    transform: translateX(-600px);
     opacity: 0;
 }
 .in-out-right {
-    transform: translateX(300px);
+    transform: translateX(600px);
     opacity: 0;
 }
 
@@ -630,12 +630,14 @@ footer {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    background-color: var(--gray-color);
-    opacity: 0;
+    background-color: var(--white-color);
     transition: 0.2s;
+}
+.go-to-main img {
+    opacity: 0.4;
 }
 .go-to-main:hover {
     cursor: pointer;
