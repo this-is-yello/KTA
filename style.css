@@ -354,12 +354,12 @@ header {
 }
 .taekwondo-tech-menu>li {
     font-size: 28px;
+    transition: 0.2s;
     color: var(--gray-color);
 }
 .taekwondo-tech-menu>li:hover {
     cursor: pointer;
     color: var(--main-color);
-    transition: 0.2s;
 }
 .tech-menu-contents {
     display: flex;
@@ -427,6 +427,12 @@ video {
 .in-out-right {
     transform: translateX(200px);
     opacity: 0;
+}
+.main-color {
+    color: var(--main-color);
+}
+.gray-color {
+    color: var(--gray-color);
 }
 
 
