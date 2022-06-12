@@ -15,10 +15,6 @@
     font-family: "GothicA1-Bold";
 }
 @font-face {
-    src: url(fonts/GothicA1-ExtraBold.ttf);
-    font-family: "GothicA1-ExtraBold";
-}
-@font-face {
     src: url(fonts/GothicA1-Black.ttf);
     font-family: "GothicA1-Black";
 }
@@ -26,12 +22,16 @@
     --main-color: #091569;
     --gray-color: #C1C5C4;
     --white-color: #ffffff;
+    --black-color: #1e1e1e;
 }
+
 
 h3 {
     font-family: "GothicA1-Black";
 }
 
+
+/* --------------- main --------------- */
 #main {
     position: relative;
     width: 100%;
@@ -42,10 +42,10 @@ h3 {
     content: '';
     display: block;
     background-image: url(img/main-backgroung-peace.png);
-    width: 400vw;
-    height: 400vh;
+    width: 50000vw;
+    height: 50000vh;
     transform: rotate(15deg) translate(-50%, 0%);
-    animation: to-top infinite 20s linear;
+    animation: to-top infinite 2000s linear;
     background-color: #a5a5a5;
 }
 .main-logo {
@@ -72,6 +72,7 @@ h3 {
 }
 
 
+/* --------------- nav-bar --------------- */
 header {
     position: fixed;
     top: 0;
@@ -88,16 +89,16 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 16px;
 }
 .nav-bar>.nav-logo {
     margin-left: 16px;
 }
 .nav-bar-menu {
     display: flex;
-    width: 400px;
+    width: 440px;
     justify-content: space-between;
 }
+
 .nav-bar-menu>li>a {
     font-size: 20px;
     color: var(--main-color);
@@ -135,6 +136,7 @@ header {
 }
 
 
+/* --------------- business-goal --------------- */
 .business-goal {
     display: flex;
     flex-direction: column;
@@ -207,6 +209,7 @@ header {
 }
 
 
+/* --------------- what-is-taekwondo --------------- */
 .what-is-taekwondo {
     display: flex;
     align-items: center;
@@ -218,7 +221,6 @@ header {
     width: 1200px;
     display: flex;
     flex-direction: column;
-    padding: 0 16px;
 }
 .taekwondo-is {
     display: flex;
@@ -331,6 +333,7 @@ header {
 }
 
 
+/* --------------- taekwondo-tech --------------- */
 .taekwondo-tech {
     display: flex;
     flex-direction: column;
@@ -347,15 +350,15 @@ header {
     justify-content: space-between;
     margin-top: 20px;
     margin-bottom: 40px;
-    width: 220px;
+    width: 240px;
 }
 .taekwondo-tech-menu>li {
-    font-size: 20px;
+    font-size: 28px;
+    color: var(--gray-color);
 }
 .taekwondo-tech-menu>li:hover {
     cursor: pointer;
-    color: var(--gray-color);
-    /* opacity: 0.5; */
+    color: var(--main-color);
     transition: 0.2s;
 }
 .tech-menu-contents {
@@ -418,15 +421,16 @@ video {
     height: 338px;
 }
 .in-out-left {
-    transform: translateX(-600px);
+    transform: translateX(-200px);
     opacity: 0;
 }
 .in-out-right {
-    transform: translateX(600px);
+    transform: translateX(200px);
     opacity: 0;
 }
 
 
+/* --------------- more-menu --------------- */
 .more-menu {
     display: flex;
     justify-content: center;
@@ -440,7 +444,6 @@ video {
     display: flex;
     flex-direction: column;
     width: 1200px;
-    padding: 0 16px;
 }
 .other-menu {
     display: flex;
@@ -466,6 +469,7 @@ video {
     font-size: 28px;
     color: var(--white-color);
 }
+
 .performance-video-menu {
     display: flex;
     justify-content: space-between;
@@ -547,7 +551,6 @@ video {
     transition: 0.2s;
 }
 
-
 .sponser {
     display: flex;
     flex-direction: column;
@@ -565,6 +568,7 @@ video {
 }
 
 
+/* --------------- footer --------------- */
 footer {
     display: flex;
     align-items: center;
@@ -578,7 +582,6 @@ footer {
     justify-content: space-between;
     align-items: center;
     width: 1200px;
-    padding: 0 16px;
 }
 .center-line {
     width: 2px;
@@ -626,6 +629,7 @@ footer {
 }
 
 
+/* --------------- go-to-main --------------- */
 .go-to-main {
     position: fixed;
     bottom: 40px;
@@ -633,11 +637,11 @@ footer {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background-color: var(--white-color);
     transition: 0.2s;
+    opacity: 0;
 }
 .go-to-main img {
-    opacity: 0.4;
+    opacity: 0.8;
 }
 .go-to-main:hover {
     cursor: pointer;
