@@ -1,3 +1,30 @@
+/* ---------- nav-bar ---------- */
+navBar();
+
+function navBar() {
+  const header = document.querySelector("header");
+  const headerHeight = header.getBoundingClientRect().height;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > headerHeight) {
+      header.setAttribute("style", "opacity: 1");
+    } else {
+      header.setAttribute("style", "opacity: 0");
+    }
+  });
+
+  const sections = document.getElementsByClassName("section");
+
+  const navBar = document.querySelector(".nav-bar-menu");
+
+  for (let i = 0; i < navBar.childElementCount; i++) {
+    navBar.children[i].addEventListener("click", () => {
+      window.scrollTo({top:sections[i].offsetTop, behavior:"smooth" });
+    });
+  }
+}
+
+
 /* ---------- business-goal ---------- */
 bussinessGoal();
 
@@ -136,105 +163,84 @@ function taekwondoTech() {
 
 
 /* ---------- associtaion ---------- */
-const associtaionMoniter = document.querySelector(".associtaion-menu-moniter");
+associtaion();
 
-const associtaionSlide = document.querySelector(".associtaion-all-slide");
-const associtaionFirst = associtaionSlide.firstElementChild.cloneNode(true);
-const associtaionLast = associtaionSlide.lastElementChild.cloneNode(true);
+function associtaion() {
+  const associtaionMoniter = document.querySelector(".associtaion-menu-moniter");
+  const associtaionSlide = document.querySelector(".associtaion-all-slide");
 
-associtaionSlide.appendChild(associtaionFirst);
-associtaionSlide.insertBefore(
-  associtaionLast,
-  associtaionSlide.firstElementChild
-);
+  const associtaionFirst = associtaionSlide.firstElementChild.cloneNode(true);
+  const associtaionLast = associtaionSlide.lastElementChild.cloneNode(true);
+  associtaionSlide.appendChild(associtaionFirst);
+  associtaionSlide.insertBefore(associtaionLast,associtaionSlide.firstElementChild);
 
-const associtaionSlideHeight = 96;
+  const associtaionSlideHeight = 96;
+  let moveCheck = true;
+  associtaionSlide.style.height = associtaionSlide.childElementCount * associtaionSlideHeight + "px";
 
-let moveCheckC = true;
+  const associtaionBtns = document.querySelector(".associtaion-buttons");
+  associtaionBtns.children[0].addEventListener("click", goDown);
 
-associtaionSlide.style.height =
-  associtaionSlide.childElementCount * associtaionSlideHeight + "px";
+  let num = 1;
+  associtaionMoniter.children[0].style.transform = "translateY(-" + num * 96 + "px)";
 
-const associtaionBtns = document.querySelector(".associtaion-buttons");
-associtaionBtns.children[0].addEventListener("click", goDown);
+  let inter = setInterval(() => {
+    goDown();
+  }, 4000);
 
-let numC = 1;
-associtaionMoniter.children[0].style.transform =
-  "translateY(-" + numC * 96 + "px)";
-
-let interC = setInterval(() => {
-  goDown();
-}, 4000);
-
-function goDown() {
-  if (moveCheckC) {
-    numC++;
-    moveCheckC = false;
-
-    setTimeout(() => {
-      if (numC === associtaionSlide.childElementCount - 1) {
-        numC = 1;
-        moveSlideC(0);
-      }
-
-      moveCheckC = true;
-    }, 1000);
-
-    moveSlideC(1);
+  function goDown() {
+    if (moveCheck) {
+      num++;
+      moveCheck = false;
+      setTimeout(() => {
+        if (num === associtaionSlide.childElementCount - 1) {
+          num = 1;
+          moveSlide(0);
+        }
+        moveCheck = true;
+      }, 1000);
+      moveSlide(1);
+    }
   }
-}
 
-function moveSlideC(time) {
-  associtaionSlide.style.transition = time + "s";
-  associtaionMoniter.children[0].style.transform =
-    "translateY(-" + numC * 96 + "px)";
-}
-
-
-/* ---------- nav-bar ---------- */
-const header = document.querySelector("header");
-const headerHeight = header.getBoundingClientRect().height;
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > headerHeight) {
-    header.setAttribute("style", "opacity: 1");
-  } else {
-    header.setAttribute("style", "opacity: 0");
+  function moveSlide(time) {
+    associtaionSlide.style.transition = time + "s";
+    associtaionMoniter.children[0].style.transform = "translateY(-" + num * 96 + "px)";
   }
-});
-
-const sections = document.getElementsByClassName("section");
-
-const navBar = document.querySelector(".nav-bar-menu");
-
-for (let i = 0; i < navBar.childElementCount; i++) {
-  navBar.children[i].addEventListener("click", () => {
-    window.scrollTo({ top: sections[i].offsetTop, behavior: "smooth" });
-  });
 }
 
 
 /* ---------- go-to-main ---------- */
-const locationMain = document.getElementById("main");
+goToMain();
 
-const toMain = document.querySelector(".go-to-main");
+function goToMain() {
+  const locationMain = document.getElementById("main");
 
-toMain.addEventListener("click", goMain);
-function goMain() {
-  window.scrollTo({ top: locationMain.offsetTop, behavior: "smooth" });
+  const toMain = document.querySelector(".go-to-main");
+
+  toMain.addEventListener("click", goMain);
+  function goMain() {
+    window.scrollTo({top:locationMain.offsetTop, behavior:"smooth"});
+  }
+
+  const hideHeight = toMain.getBoundingClientRect().height;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > hideHeight) {
+      toMain.setAttribute("style", "opacity: 1");
+    } else {
+      toMain.setAttribute("style", "opacity: 0");
+    }
+  });
 }
 
-const hideHeight = toMain.getBoundingClientRect().height;
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > hideHeight) {
-    toMain.setAttribute("style", "opacity: 1");
-  } else {
-    toMain.setAttribute("style", "opacity: 0");
-  }
-});
-
 /* ---------- scroll ---------- */
+const locationMain = document.getElementById("main");
+const mainHeight = locationMain.getBoundingClientRect().height;
+
+window.addEventListener("scroll", () =>  {
+  
+})
 // const section = document.querySelectorAll(".section");
 // const sectionHeight = section.getBoundingClientRect().height;
 
