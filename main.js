@@ -1,7 +1,7 @@
-/* ---------- nav-bar ---------- */
-navBar();
+/* ---------- header ---------- */
+header();
 
-function navBar() {
+function header() {
   const header = document.querySelector("header");
   const headerHeight = header.getBoundingClientRect().height;
 
@@ -65,10 +65,8 @@ function bussinessGoal() {
           num = goalSlide.childElementCount - 2;
           moveSlide(0);
         }
-
         moveCheck = true;
       }, 1000);
-
       moveSlide(1);
     }
   }
@@ -83,10 +81,8 @@ function bussinessGoal() {
           num = 1;
           moveSlide(0);
         }
-
         moveCheck = true;
       }, 1000);
-
       moveSlide(1);
     }
   }
@@ -239,10 +235,17 @@ function goToMain() {
   });
 }
 
-/* ---------- scroll ---------- */
 
-// const section = document.querySelectorAll(".section");
-// const sectionHeight = section.getBoundingClientRect().height;
+/* ---------- scroll ---------- */
+const section = document.querySelectorAll(".section");
+const navBar = document.querySelector(".nav-bar-menu");
+
+window.addEventListener("scroll", () => {
+  for (let i = 0; i < navBar.childElementCount; i++) {
+    window.scrollTo({top:sections[i].offsetTop, behavior:"smooth"});
+  }
+});
+
 
 /* scroll */
 //https://enai.tistory.com/33
