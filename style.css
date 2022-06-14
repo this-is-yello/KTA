@@ -340,7 +340,7 @@ header {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 979px;
+    height: 100vh;
 }
 .taekwondo-tech>h3 {
     font-size: 56px;

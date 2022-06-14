@@ -13,13 +13,13 @@ function header() {
     }
   });
 
-  const sections = document.getElementsByClassName("section");
+  const sections = document.getElementsByTagName("section");
 
   const navBar = document.querySelector(".nav-bar-menu");
 
   for (let i = 0; i < navBar.childElementCount; i++) {
     navBar.children[i].addEventListener("click", () => {
-      window.scrollTo({top:sections[i].offsetTop, behavior:"smooth" });
+      window.scrollTo({top:sections[i].offsetTop, behavior:"smooth"});
     });
   }
 }
@@ -237,17 +237,59 @@ function goToMain() {
 
 
 /* ---------- scroll ---------- */
-const section = document.querySelectorAll(".section");
-const navBar = document.querySelector(".nav-bar-menu");
 
-window.addEventListener("scroll", () => {
-  for (let i = 0; i < navBar.childElementCount; i++) {
-    window.scrollTo({top:sections[i].offsetTop, behavior:"smooth"});
-  }
-});
+window.onload = function() {
+  let moveCheck = true;
+  const scrolls = document.querySelectorAll(".scroll");
+  const scrollsCount = scrolls.length;
+
+  scrolls.forEach (function(item, index) {
+    item.addEventListener("mousewheel", function(e) {
+      e.preventDefault();
+      if(moveCheck===true){
+        moveCheck = false;
+        let delta = 0;
+        
+        if (!e) e = window.e;
+        if (e.wheelDelta) {
+          delta = e.wheelDelta / 120;
+          if (window.opera) delta = -delta;
+        }
+        else if (e.detail)
+        delta = -e.detail / 3;
+
+        let moveTop = window.scrollY;
+        let scrollsSelector = scrolls[index];
+        
+        if (delta < 0) {
+          console.log(delta);
+          if (scrollsSelector !== scrollsCount-1) {
+            try {
+              moveTop = window.scrollY + scrollsSelector.nextElementSibling.getBoundingClientRect().top;
+            }catch(error){
+            console.log(error);
+            }
+          }
+        } else {
+        if (scrollsSelector !== 0) {
+          console.log(scrollsSelector)
+          try {
+            moveTop = window.scrollY + scrollsSelector.previousElementSibling.getBoundingClientRect().top;
+            console.log(index)
+          }catch(error){
+            console.log(error);
+          }
+        }
+      }
+      
+      setTimeout(() => {
+        moveCheck=true;
+      }, 500);
+      window.scrollTo({top:moveTop, left:0, behavior:"smooth"});
+      }
 
 
-/* scroll */
-//https://enai.tistory.com/33
-//https://velog.io/@jaenny/JavaScript-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%8B%9C-%ED%95%9C-%EC%84%B9%EC%85%98%EC%94%A9-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B2%8C-%ED%95%98%EA%B8%B0
-//http://2nusa.blogspot.com/2019/04/javascript-mouse-wheel.html
+    });
+  });
+}
+
