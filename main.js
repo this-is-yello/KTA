@@ -19,7 +19,7 @@ function header() {
 
   for (let i = 0; i < navBar.childElementCount; i++) {
     navBar.children[i].addEventListener("click", () => {
-      window.scrollTo({top:sections[i].offsetTop, behavior:"smooth"});
+      window.scrollTo({ top: sections[i].offsetTop, behavior: "smooth" });
     });
   }
 }
@@ -125,26 +125,26 @@ function taekwondoTech() {
                   menuSlide.children[j].classList.remove("in-out-right");
                   menuSlide.children[j].classList.add("in-out-left");
                 }
-              }, 500);
+              }, 600);
             }
           }
 
           setTimeout(() => {
             moveCheck = true;
-          }, 500);
+          }, 600);
 
           techSlide.children[i].classList.remove("in-out-left");
           menuSlide.children[i].classList.remove("in-out-left");
         }
       }
-      
+
       // if (menuSlide.children[i].classList.contains("in-out-left")) {
-        //   if (moveCheck) {
-          //     moveCheck = false;
+      //   if (moveCheck) {
+      //     moveCheck = false;
       //     for (let k = 0; k < techBtns.childElementCount; k++) {
-        //       if (!menuSlide.children[k].classList.contains("in-out-left")) {
-          //         menuSlide.children[k].classList.add("in-out-right");
-          //         setTimeout(() => {
+      //       if (!menuSlide.children[k].classList.contains("in-out-left")) {
+      //         menuSlide.children[k].classList.add("in-out-right");
+      //         setTimeout(() => {
       //           if (menuSlide.children[k].classList.contains("in-out-right")) {
       //             menuSlide.children[k].classList.remove("in-out-right");
       //             menuSlide.children[k].classList.add("in-out-left");
@@ -153,11 +153,11 @@ function taekwondoTech() {
       //       }
       //     }
       //     setTimeout(() => {
-        //       moveCheck = true;
-        //     }, 500);
-        //     menuSlide.children[i].classList.remove("in-out-left");
-        //   }
-        // }
+      //       moveCheck = true;
+      //     }, 500);
+      //     menuSlide.children[i].classList.remove("in-out-left");
+      //   }
+      // }
     });
   }
 }
@@ -173,7 +173,7 @@ function associtaion() {
   const associtaionFirst = associtaionSlide.firstElementChild.cloneNode(true);
   const associtaionLast = associtaionSlide.lastElementChild.cloneNode(true);
   associtaionSlide.appendChild(associtaionFirst);
-  associtaionSlide.insertBefore(associtaionLast,associtaionSlide.firstElementChild);
+  associtaionSlide.insertBefore(associtaionLast, associtaionSlide.firstElementChild);
 
   const associtaionSlideHeight = 96;
   let moveCheck = true;
@@ -221,7 +221,7 @@ function goToMain() {
 
   toMain.addEventListener("click", goMain);
   function goMain() {
-    window.scrollTo({top:locationMain.offsetTop, behavior:"smooth"});
+    window.scrollTo({ top: locationMain.offsetTop, behavior: "smooth" });
   }
 
   const hideHeight = toMain.getBoundingClientRect().height;
@@ -238,58 +238,59 @@ function goToMain() {
 
 /* ---------- scroll ---------- */
 
-window.onload = function() {
+window.onload = function () {
   let moveCheck = true;
   const scrolls = document.querySelectorAll(".scroll");
   const scrollsCount = scrolls.length;
 
-  scrolls.forEach (function(item, index) {
-    item.addEventListener("mousewheel", function(e) {
+  scrolls.forEach(function (item, index) {
+    item.addEventListener("mousewheel", function (e) {
       e.preventDefault();
-      if(moveCheck===true){
+      if (moveCheck === true) {
         moveCheck = false;
         let delta = 0;
-        
+
         if (!e) e = window.e;
         if (e.wheelDelta) {
           delta = e.wheelDelta / 120;
           if (window.opera) delta = -delta;
         }
         else if (e.detail)
-        delta = -e.detail / 3;
+          delta = -e.detail / 3;
 
         let moveTop = window.scrollY;
         let scrollsSelector = scrolls[index];
-        
+
         if (delta < 0) {
-          console.log(delta);
-          if (scrollsSelector !== scrollsCount-1) {
+          if (scrollsSelector !== scrollsCount - 1) {
             try {
               moveTop = window.scrollY + scrollsSelector.nextElementSibling.getBoundingClientRect().top;
-            }catch(error){
-            console.log(error);
+            } catch (error) {
+              console.log(error);
             }
           }
         } else {
-        if (scrollsSelector !== 0) {
-          console.log(scrollsSelector)
-          try {
-            moveTop = window.scrollY + scrollsSelector.previousElementSibling.getBoundingClientRect().top;
-            console.log(index)
-          }catch(error){
-            console.log(error);
+          if (scrollsSelector !== 0) {
+            try {
+              moveTop = window.scrollY + scrollsSelector.previousElementSibling.getBoundingClientRect().top;
+              console.log(index)
+            } catch (error) {
+              console.log(error);
+            }
           }
         }
-      }
-      
-      setTimeout(() => {
-        moveCheck=true;
-      }, 500);
-      window.scrollTo({top:moveTop, left:0, behavior:"smooth"});
-      }
 
-
+        setTimeout(() => {
+          moveCheck = true;
+        }, 500);
+        window.scrollTo({ top: moveTop, left: 0, behavior: "smooth" });
+      }
     });
   });
-}
 
+  const moreMenu = document.querySelector(".more-menu");
+  let moveTop = window.scrollY;
+
+  if (moreMenu.offsetTop) {
+    moveTop = window.scrollY + moreMenu.previousElementSibling.getBoundingClientRect().top;
+  }
