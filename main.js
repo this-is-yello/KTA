@@ -1,6 +1,13 @@
-/* ---------- header ---------- */
-header();
+window.onload = function() {
+  header();
+  bussinessGoal();
+  taekwondoTech();
+  associtaion();
+  goToMain();
+  onePageSlide();
+}
 
+/* ---------- header ---------- */
 function header() {
   const header = document.querySelector("header");
   const headerHeight = header.getBoundingClientRect().height;
@@ -26,8 +33,6 @@ function header() {
 
 
 /* ---------- business-goal ---------- */
-bussinessGoal();
-
 function bussinessGoal() {
   const goalMoniter = document.querySelector(".business-goal-moniter");
 
@@ -96,8 +101,6 @@ function bussinessGoal() {
 
 
 /* ---------- taekwondo-tech ---------- */
-taekwondoTech();
-
 function taekwondoTech() {
   const techBtns = document.querySelector(".taekwondo-tech-menu");
   const techSlide = document.querySelector(".tech-video-slide");
@@ -125,13 +128,13 @@ function taekwondoTech() {
                   menuSlide.children[j].classList.remove("in-out-right");
                   menuSlide.children[j].classList.add("in-out-left");
                 }
-              }, 600);
+              }, 500);
             }
           }
 
           setTimeout(() => {
             moveCheck = true;
-          }, 600);
+          }, 500);
 
           techSlide.children[i].classList.remove("in-out-left");
           menuSlide.children[i].classList.remove("in-out-left");
@@ -164,8 +167,6 @@ function taekwondoTech() {
 
 
 /* ---------- associtaion ---------- */
-associtaion();
-
 function associtaion() {
   const associtaionMoniter = document.querySelector(".associtaion-menu-moniter");
   const associtaionSlide = document.querySelector(".associtaion-all-slide");
@@ -212,8 +213,6 @@ function associtaion() {
 
 
 /* ---------- go-to-main ---------- */
-goToMain();
-
 function goToMain() {
   const locationMain = document.getElementById("main");
 
@@ -237,11 +236,12 @@ function goToMain() {
 
 
 /* ---------- scroll ---------- */
-
-window.onload = function () {
-  let moveCheck = true;
+function onePageSlide() {
   const scrolls = document.querySelectorAll(".scroll");
   const scrollsCount = scrolls.length;
+  let moveTop = window.scrollY;
+  
+  let moveCheck = true;
 
   scrolls.forEach(function (item, index) {
     item.addEventListener("mousewheel", function (e) {
@@ -258,7 +258,7 @@ window.onload = function () {
         else if (e.detail)
           delta = -e.detail / 3;
 
-        let moveTop = window.scrollY;
+        
         let scrollsSelector = scrolls[index];
 
         if (delta < 0) {
@@ -283,14 +283,46 @@ window.onload = function () {
         setTimeout(() => {
           moveCheck = true;
         }, 500);
-        window.scrollTo({ top: moveTop, left: 0, behavior: "smooth" });
+        window.scrollTo({top: moveTop, left: 0, behavior: "smooth"});
       }
     });
   });
 
-  const moreMenu = document.querySelector(".more-menu");
-  let moveTop = window.scrollY;
+  const scrollValue = document.documentElement.scrollTop;
+  console.log(scrollValue);
 
-  if (moreMenu.offsetTop) {
-    moveTop = window.scrollY + moreMenu.previousElementSibling.getBoundingClientRect().top;
-  }
+  const moreMenu = document.querySelector(".more-menu");
+
+  moreMenu.addEventListener("mousewheel", (e) => {
+    
+    let delta = 0;
+    
+    if (!e) e = window.e;
+    if (e.wheelDelta) {
+      delta = e.wheelDelta / 120;
+        if (window.opera) delta = -delta;
+      }
+      else if (e.detail)
+      delta = -e.detail / 3;
+      
+      if(delta===1 && scrollValue ===3910) {
+        e.preventDefault();
+        if (moveCheck === true) {
+          moveCheck = false;
+        try {
+          moveTop = window.scrollY + moreMenu.previousElementSibling.getBoundingClientRect().top;
+          
+        } catch (error) {
+          console.log(error)
+        }
+        
+        window.scrollTo({top: moveTop, left: 0, behavior: "smooth"});
+      }
+      setTimeout(() => {
+        moveCheck = true;
+      }, 500);
+    }
+  });
+}
+
+  
