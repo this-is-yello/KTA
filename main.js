@@ -1,10 +1,19 @@
 window.onload = function() {
-  header();
-  bussinessGoal();
-  taekwondoTech();
-  associtaion();
-  goToMain();
-  onePageSlide();
+  if (window.innerWidth <= 1240) {
+    header();
+    bussinessGoal();
+    taekwondoTech();
+    associtaion();
+    goToMain();
+    onePageSlide();
+  } else {
+    header();
+    bussinessGoal();
+    taekwondoTech();
+    associtaion();
+    goToMain();
+    onePageSlide();
+  }
 }
 
 /* ---------- header ---------- */
@@ -286,42 +295,6 @@ function onePageSlide() {
         window.scrollTo({top: moveTop, left: 0, behavior: "smooth"});
       }
     });
-  });
-
-  const scrollValue = document.documentElement.scrollTop;
-  console.log(scrollValue);
-
-  const moreMenu = document.querySelector(".more-menu");
-
-  moreMenu.addEventListener("mousewheel", (e) => {
-    
-    let delta = 0;
-    
-    if (!e) e = window.e;
-    if (e.wheelDelta) {
-      delta = e.wheelDelta / 120;
-        if (window.opera) delta = -delta;
-      }
-      else if (e.detail)
-      delta = -e.detail / 3;
-      
-      if(delta===1 && scrollValue ===3910) {
-        e.preventDefault();
-        if (moveCheck === true) {
-          moveCheck = false;
-        try {
-          moveTop = window.scrollY + moreMenu.previousElementSibling.getBoundingClientRect().top;
-          
-        } catch (error) {
-          console.log(error)
-        }
-        
-        window.scrollTo({top: moveTop, left: 0, behavior: "smooth"});
-      }
-      setTimeout(() => {
-        moveCheck = true;
-      }, 500);
-    }
   });
 }
 
