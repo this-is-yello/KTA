@@ -510,7 +510,7 @@ video {
 .associtaion-sponser {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100vh;
@@ -523,7 +523,6 @@ video {
     display: flex;
     flex-direction: column;
     width: 1200px;
-    padding-top: 120px;
 }
 .associtaion li:hover {
     opacity: 0.5;
@@ -593,20 +592,21 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 260px;
+    height: 100vh;
     background-color: var(--main-color);
 }
 .footer-contents {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     width: 1200px;
 }
-.center-line {
-    width: 2px;
-    height: 80px;
-    background-color: var(--white-color);
-    opacity: 0.7;
+.logo-sns {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 1200px;
+    padding-bottom: 100px;
 }
 .sns-icon {
     width: 392px;
@@ -619,12 +619,19 @@ footer {
     opacity: 0.5;
     transition: 0.2s;
 }
-.footer-menu {
-    width: 592px;
-    height: 23px;
+
+.menu-copyright {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    flex-direction: column;
+    width: 1200px;
+}
+.footer-menu {
+    display: flex;
+    height: 23px;
+    margin-bottom: 24px;
+}
+.footer-menu>li {
+    margin-right: 20px;
 }
 .footer-menu>li>a {
     color: var(--white-color);
@@ -635,7 +642,7 @@ footer {
     opacity: 0.5;
     transition: 0.2s;
 }
-.sns-menu-copyright>p {
+.menu-copyright>p {
     font-size: 16px;
     font-family: "GothicA1-Medium";
 }
@@ -680,6 +687,7 @@ footer {
         align-items: center;
         justify-content: center;
         width: 100vw;
+        height: 360px;
     }
     .goal-slide>p {
         font-size: 40px;
@@ -847,5 +855,22 @@ footer {
     }
     .sponser-menu img {
         width: 323px;
+    }
+
+    .footer-contents {
+        width: 1000px;
+    }
+    .logo-sns {
+        width: 1000px;
+    }
+    .sns-icon {
+        width: 392px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .menu-copyright {
+        width: 1000px;
     }
 }

@@ -21,15 +21,29 @@ function header() {
     }
   });
 
+  
+  window.addEventListener("scroll", () => {
+    const footer = document.querySelector("footer");
+    const footerHeight = footer.getBoundingClientRect().height;
+    const allHtml = document.querySelector("html"); 
+    const windowHeight =  allHtml.offsetHeight;
+    const heightHeight = windowHeight - footerHeight;
+
+    if (window.scrollY > heightHeight - 200) {
+      header.setAttribute("style", "opacity: 0");
+    }
+  });
+
   const sections = document.getElementsByTagName("section");
 
   const navBar = document.querySelector(".nav-bar-menu");
 
   for (let i = 0; i < navBar.childElementCount; i++) {
     navBar.children[i].addEventListener("click", () => {
-      window.scrollTo({ top: sections[i].offsetTop, behavior: "smooth" });
+      window.scrollTo({top: sections[i].offsetTop, behavior: "smooth"});
     });
   }
+
 }
 
 
@@ -141,27 +155,6 @@ function taekwondoTech() {
           menuSlide.children[i].classList.remove("in-out-left");
         }
       }
-
-      // if (menuSlide.children[i].classList.contains("in-out-left")) {
-      //   if (moveCheck) {
-      //     moveCheck = false;
-      //     for (let k = 0; k < techBtns.childElementCount; k++) {
-      //       if (!menuSlide.children[k].classList.contains("in-out-left")) {
-      //         menuSlide.children[k].classList.add("in-out-right");
-      //         setTimeout(() => {
-      //           if (menuSlide.children[k].classList.contains("in-out-right")) {
-      //             menuSlide.children[k].classList.remove("in-out-right");
-      //             menuSlide.children[k].classList.add("in-out-left");
-      //           }
-      //         }, 500);
-      //       }
-      //     }
-      //     setTimeout(() => {
-      //       moveCheck = true;
-      //     }, 500);
-      //     menuSlide.children[i].classList.remove("in-out-left");
-      //   }
-      // }
     });
   }
 }
