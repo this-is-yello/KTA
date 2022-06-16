@@ -165,6 +165,10 @@ header {
     align-items: center;
     justify-content: center;
     width: 100vw;
+    height: 558px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .goal-slide>p {
     color: var(--white-color);
@@ -173,31 +177,26 @@ header {
 }
 .goal-slide-1 {
     background-image: url(img/goal-1.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 .goal-slide-2 {
     background-image: url(img/goal-2.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 .goal-slide-3 {
     background-image: url(img/goal-3.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 .goal-buttons {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-600px, -26px);
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 1200px;
+}
+.goal-buttons figure {
+    width: 48px;
+    height: 48px;
 }
 .goal-buttons figure:hover {
     cursor: pointer;
@@ -460,6 +459,7 @@ video {
 }
 .other-menu>li {
     background-image: url(img/other-menu.png);
+    background-position: center;
     width: 390px;
     height: 140px;
 }
@@ -483,15 +483,15 @@ video {
     width: 1200px;
     margin-bottom: 80px;
 }
-.performance-video-menu>li:first-child {
-    background-image: url(img/menu-performance.png);
+.performance-video-menu>li {
     width: 592px;
     height: 140px;
 }
+.performance-video-menu>li:first-child {
+    background-image: url(img/menu-performance.png);
+}
 .performance-video-menu>li:last-child {
     background-image: url(img/menu-video.png);
-    width: 592px;
-    height: 140px;
 }
 .performance-video-menu>li:hover {
     opacity: 0.5;
@@ -593,7 +593,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 300px;
+    height: 260px;
     background-color: var(--main-color);
 }
 .footer-contents {
@@ -672,6 +672,7 @@ footer {
 
 @media screen and (max-width: 1240px) {
     .business-goal>h3 {
+        width: 1000px;
         font-size: 24PX;
     }
     .goal-slide {
@@ -683,9 +684,11 @@ footer {
     .goal-slide>p {
         font-size: 40px;
     }
+    .goal-buttons {
+        width: 1000px;
+    }
 
 
-    
     .what-is-contents {
         width: 1000px;
     }
@@ -720,5 +723,129 @@ footer {
     .as-something {
         width: 316px;
         height: 260px;
+    }
+
+
+    .taekwondo-tech>h3 {
+        font-size: 48px;
+    }
+    .taekwondo-tech-menu {
+        width: 200px;
+    }
+    .taekwondo-tech-menu>li {
+        font-size: 22px;
+    }
+    .tech-menu-contents {
+        width: 1000px;
+        height: 282px;
+    }
+    .tech-menu-moniter {
+        width: 500px;
+        height: 282px;
+    }
+    .tech-menu-slide {
+        width: 500px;
+        height: 282px;
+    }
+    .menu-slide {
+        width: 500px;
+        height: 282px;
+    }
+    .menu-slide>h4 {
+        font-size: 40px;
+    }
+    .menu-slide>p {
+        font-size: 20px;
+    }
+    .tech-video-moniter {
+        width: 500px;
+    }
+    .tech-video-slide {
+        width: 500px;
+        height: 282px;
+    }
+    video {
+        width: 500px;
+        height: 282px;
+    }
+
+
+    .more-menu h3 {
+        font-size: 24px;
+    }
+    .more-menu-contents {
+        width: 1000px;
+    }
+    .other-menu {
+        width: 1000px;
+    }
+    .other-menu>li {
+        width: 323px;
+        height: 116px;
+    }
+    .other-menu>li>a {
+        width: 323px;
+        height: 116px;
+        line-height: 116px;
+        font-size: 24px;
+    }
+    .performance-video-menu {
+        width: 1000px;
+    }
+    .performance-video-menu>li {
+        width: 492px;
+        height: 116px;
+    }
+    .performance-video-menu>li>a {
+        width: 492px;
+        height: 116px;
+        line-height: 116px;
+        font-size: 24px;
+    }
+
+
+    .associtaion-sponser h3 {
+        font-size: 24px;
+    }
+    .associtaion {
+        width: 1000px;
+    }
+    .associtaion-menu-moniter {
+        width: 1000px;
+        height: 66px;
+    }
+    .associtaion-all-slide {
+        width: 1000px;
+        height: 396px;
+    }
+    .associtaion-slide {
+        width: 1000px;
+        height: 66px;
+    }
+    .associtaion-slide>li {
+        width: 238px;
+        height: 66px;
+    }
+    .associtaion-slide>li>a {
+        width: 238px;
+        height: 66px;
+    }
+    .associtaion-slide img {
+        width: 238px;
+        height: 66px;  
+    }
+    .associtaion-buttons {
+        width: 1000px;
+    }
+    
+    .sponser {
+        width: 1000px;
+    }
+    .sponser-menu {
+        width: 1000px;
+        height: 66px;
+    }
+    .sponser-menu img {
+        width: 323px;
     }
 }

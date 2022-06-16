@@ -1,19 +1,11 @@
 window.onload = function() {
-  if (window.innerWidth <= 1240) {
     header();
     bussinessGoal();
     taekwondoTech();
     associtaion();
     goToMain();
     onePageSlide();
-  } else {
-    header();
-    bussinessGoal();
-    taekwondoTech();
-    associtaion();
-    goToMain();
-    onePageSlide();
-  }
+
 }
 
 /* ---------- header ---------- */
@@ -185,19 +177,23 @@ function associtaion() {
   associtaionSlide.appendChild(associtaionFirst);
   associtaionSlide.insertBefore(associtaionLast, associtaionSlide.firstElementChild);
 
-  const associtaionSlideHeight = 96;
   let moveCheck = true;
-  associtaionSlide.style.height = associtaionSlide.childElementCount * associtaionSlideHeight + "px";
+  let associtaionSlideHeight = associtaionSlide.firstElementChild.offsetHeight;
+
+  setHeight();
 
   const associtaionBtns = document.querySelector(".associtaion-buttons");
   associtaionBtns.children[0].addEventListener("click", goDown);
 
   let num = 1;
-  associtaionMoniter.children[0].style.transform = "translateY(-" + num * 96 + "px)";
+  associtaionMoniter.children[0].style.transform = "translateY(-" + num * associtaionSlideHeight + "px)";
 
   let inter = setInterval(() => {
     goDown();
   }, 4000);
+
+
+  window.addEventListener('resize', setHeight);
 
   function goDown() {
     if (moveCheck) {
@@ -214,9 +210,15 @@ function associtaion() {
     }
   }
 
+  function setHeight(){
+    associtaionSlideHeight = associtaionSlide.firstElementChild.offsetHeight;
+    associtaionSlide.style.height = associtaionSlide.childElementCount * associtaionSlideHeight + "px";
+    console.log(associtaionSlideHeight);
+  }
+
   function moveSlide(time) {
     associtaionSlide.style.transition = time + "s";
-    associtaionMoniter.children[0].style.transform = "translateY(-" + num * 96 + "px)";
+    associtaionMoniter.children[0].style.transform = "translateY(-" + num * associtaionSlideHeight + "px)";
   }
 }
 
