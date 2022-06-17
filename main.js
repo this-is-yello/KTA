@@ -1,11 +1,10 @@
 window.onload = function() {
-    header();
-    bussinessGoal();
-    taekwondoTech();
-    associtaion();
-    goToMain();
-    onePageSlide();
-
+  // header();
+  // bussinessGoal();
+  // taekwondoTech();
+  // associtaion();
+  // goToMain();
+  onePageSlide();
 }
 
 /* ---------- header ---------- */

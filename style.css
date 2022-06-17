@@ -52,7 +52,7 @@ h3 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-316px, -126px);
+    transform: translate(-50%, -50%);
 }
 .main-logo>span {
     width: 1px;
@@ -95,7 +95,7 @@ header {
 }
 .nav-bar-menu {
     display: flex;
-    width: 440px;
+    width: 480px;
     justify-content: space-between;
 }
 
@@ -550,11 +550,9 @@ video {
 }
 .associtaion-slide>li {
     width: 288px;
-    height: 80px;
 }
 .associtaion-slide>li>a {
     width: 288px;
-    height: 80px;
 }
 .associtaion-buttons {
     display: flex;
@@ -578,7 +576,6 @@ video {
     display: flex;
     justify-content: space-between;
     width: 1200px;
-    height: 80px;
 }
 .sponser-menu li:hover {
     opacity: 0.5;
@@ -678,6 +675,24 @@ footer {
 }
 
 @media screen and (max-width: 1240px) {
+    .main-logo img {
+        width: 492px;
+        height: 158px;
+    }
+
+
+    .nav-bar {
+        width: 1000px;
+        height: 80px;
+    }
+    .nav-bar-menu {
+        width: 440px;
+    }
+    .nav-bar-menu>li>a {
+        font-size: 18px;
+    }
+
+
     .business-goal>h3 {
         width: 1000px;
         font-size: 24PX;
@@ -820,7 +835,6 @@ footer {
     }
     .associtaion-menu-moniter {
         width: 1000px;
-        height: 66px;
     }
     .associtaion-all-slide {
         width: 1000px;
@@ -828,19 +842,15 @@ footer {
     }
     .associtaion-slide {
         width: 1000px;
-        height: 66px;
     }
     .associtaion-slide>li {
         width: 238px;
-        height: 66px;
     }
     .associtaion-slide>li>a {
         width: 238px;
-        height: 66px;
     }
     .associtaion-slide img {
         width: 238px;
-        height: 66px;  
     }
     .associtaion-buttons {
         width: 1000px;
@@ -872,5 +882,214 @@ footer {
     }
     .menu-copyright {
         width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .business-goal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+    }
+    .business-goal>h3 {
+        padding-bottom: 32px;
+        width: 720px;
+        font-size: 32PX;
+    }
+    .business-goal-moniter {
+        width: 720px;
+    }
+    .business-goal-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 720px;
+    }
+    .goal-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 720px;
+        height: 180px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 16px;
+    }
+    .goal-slide>p {
+        font-size: 36px;
+    }
+    .goal-buttons {
+        display: none;
+    }
+
+
+    .what-is-contents {
+        padding-top: 40px;
+        width: 720px;
+        display: flex;
+        flex-direction: column;
+    }
+    .taekwondo-is {
+        display: flex;
+        align-items: center;
+        width: 720px;
+        height: 192px;
+        background-image: url(img/taekwondo-is.png);
+        background-size: 720px 192px;
+    }
+    .taekwondo-is>.sub {
+        width: 720px;
+        height: 192px;
+    }
+    .taekwondo-is>.sub>p {
+        font-size: 24px;
+    }
+    .taekwondo-is>h3 {
+        font-size: 40px;
+    }
+    .what-as {
+        width: 720px;
+        height: 192px;
+    }
+    .what-as h3 {
+        font-size: 32px;
+    }
+    .what-as .sub {
+        width: 234px;
+        height: 192px;
+    }
+    .what-as .sub>p {
+        font-size: 14px;
+    }
+    .as-something {
+        display: flex;
+        align-items: center;
+        width: 234px;
+        height: 192px;
+        background-size: 234px 192px;
+    }
+
+
+    .more-menu h3 {
+        font-size: 28px;
+        margin-bottom: 32px;
+    }
+    .more-menu-contents {
+        display: flex;
+        flex-direction: column;
+        padding-top: 100px;
+        width: 720px;
+    }
+    .other-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 720px;
+        margin-bottom: 80px;
+    }
+    .other-menu>li {
+        background-image: none;
+        background-color: var(--main-color);
+        width: 720px;
+        height: 100px;
+        margin-bottom: 4px;
+    }
+    .other-menu>li>a {
+        width: 720px;
+        height: 100px;
+        line-height: 100px;
+        font-size: 24px;
+    }
+    
+    .performance-video-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 720px;
+        margin-bottom: 80px;
+    }
+    .performance-video-menu>li {
+        width: 720px;
+        height: 100px;
+        margin-bottom: 4px;
+        background-size: 720px 100px;
+    }
+    .performance-video-menu>li>a {
+        width: 720px;
+        height: 100px;
+        line-height: 100px;
+        font-size: 24px;
+    }
+    
+
+    .associtaion-sponser h3 {
+        font-size: 28px;
+        margin-bottom: 48px;
+    }
+    .associtaion {
+        display: flex;
+        flex-direction: column;
+        width: 720px;
+    }
+    .associtaion-menu-moniter {
+        display: flex;
+        justify-content: space-between;
+        width: 720px;
+        height: 80px;
+        overflow: hidden;
+    }
+    .associtaion-all-slide {
+        display: flex;
+        flex-direction: column;
+        width: 720px;
+        height: 480px;
+    }
+    .associtaion-slide {
+        width: 720px;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 16px;
+    }
+    .associtaion-slide>li {
+        width: 288px;
+        height: 80px;
+    }
+    .associtaion-slide>li>a {
+        width: 288px;
+        height: 80px;
+    }
+    .associtaion-buttons {
+        display: flex;
+        justify-content: center;
+        width: 1200px;
+        height: 40px;
+        padding: 16px 0;
+    }
+    
+    .sponser {
+        display: flex;
+        flex-direction: column;
+        width: 720px;
+    }
+    .sponser-menu {
+        display: flex;
+        justify-content: space-between;
+        width: 720px;
+    }
+    .sponser {
+        width: 720px;
+    }
+    .sponser-menu {
+        width: 720px;
+    }
+    .sponser-menu img {
+        width: 227px;
     }
 }
