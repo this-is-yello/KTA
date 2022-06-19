@@ -610,7 +610,6 @@ footer {
     height: 50px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
 }
 .sns-icon li:hover {
     opacity: 0.5;
@@ -855,7 +854,6 @@ footer {
     .associtaion-buttons {
         width: 1000px;
     }
-    
     .sponser {
         width: 1000px;
     }
@@ -875,10 +873,6 @@ footer {
     }
     .sns-icon {
         width: 392px;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
     }
     .menu-copyright {
         width: 1000px;
@@ -1029,48 +1023,36 @@ footer {
     
 
     .associtaion-sponser h3 {
-        font-size: 28px;
-        margin-bottom: 48px;
+        font-size: 24px;
     }
     .associtaion {
-        display: flex;
-        flex-direction: column;
         width: 720px;
     }
     .associtaion-menu-moniter {
-        display: flex;
-        justify-content: space-between;
         width: 720px;
-        height: 80px;
-        overflow: hidden;
+        height: 46px;
     }
     .associtaion-all-slide {
-        display: flex;
-        flex-direction: column;
         width: 720px;
-        height: 480px;
+        height: 276px;
     }
     .associtaion-slide {
         width: 720px;
-        height: 80px;
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 16px;
     }
     .associtaion-slide>li {
-        width: 288px;
-        height: 80px;
+        width: 165px;
     }
     .associtaion-slide>li>a {
-        width: 288px;
-        height: 80px;
+        width: 165px;
+    }
+    .associtaion-slide img {
+        width: 165px;
     }
     .associtaion-buttons {
-        display: flex;
-        justify-content: center;
-        width: 1200px;
-        height: 40px;
-        padding: 16px 0;
+        width: 720px;
+    }
+    .associtaion-sponser h3 {
+        font-size: 24px;
     }
     
     .sponser {
@@ -1091,5 +1073,25 @@ footer {
     }
     .sponser-menu img {
         width: 227px;
+    }
+
+    .footer-contents {
+        width: 720px;
+    }
+    .logo-sns {
+        width: 720px;
+    }
+    .footer-logo img {
+        width: 136px;
+    }
+    .sns-icon {
+        width: 320px;
+        height: 36px;
+    }
+    .sns-icon img {
+        width: 36px;
+    }
+    .menu-copyright {
+        width: 720px;
     }
 }

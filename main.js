@@ -1,9 +1,9 @@
 window.onload = function() {
-  // header();
+  header();
   // bussinessGoal();
-  // taekwondoTech();
-  // associtaion();
-  // goToMain();
+  taekwondoTech();
+  associtaion();
+  goToMain();
   onePageSlide();
 }
 
@@ -120,6 +120,9 @@ function taekwondoTech() {
   const techSlide = document.querySelector(".tech-video-slide");
   const menuSlide = document.querySelector(".tech-menu-slide");
   let moveCheck = true;
+  let index = 1;
+  
+  techBtns.children[index-1].style.color='#091569';
 
   for (let i = 0; i < techBtns.childElementCount; i++) {
     techBtns.children[i].addEventListener("click", () => {
@@ -164,9 +167,7 @@ function associtaion() {
   const associtaionMoniter = document.querySelector(".associtaion-menu-moniter");
   const associtaionSlide = document.querySelector(".associtaion-all-slide");
 
-  const associtaionFirst = associtaionSlide.firstElementChild.cloneNode(true);
   const associtaionLast = associtaionSlide.lastElementChild.cloneNode(true);
-  associtaionSlide.appendChild(associtaionFirst);
   associtaionSlide.insertBefore(associtaionLast, associtaionSlide.firstElementChild);
 
   let moveCheck = true;
@@ -291,5 +292,3 @@ function onePageSlide() {
     });
   });
 }
-
-  
