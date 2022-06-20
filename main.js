@@ -167,7 +167,9 @@ function associtaion() {
   const associtaionMoniter = document.querySelector(".associtaion-menu-moniter");
   const associtaionSlide = document.querySelector(".associtaion-all-slide");
 
+  const associtaionFirst = associtaionSlide.firstElementChild.cloneNode(true);
   const associtaionLast = associtaionSlide.lastElementChild.cloneNode(true);
+  associtaionSlide.appendChild(associtaionFirst);
   associtaionSlide.insertBefore(associtaionLast, associtaionSlide.firstElementChild);
 
   let moveCheck = true;

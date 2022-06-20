@@ -25,6 +25,12 @@
     --black-color: #1e1e1e;
 }
 
+body {
+    -ms-overflow-style:none;
+}
+body::-webkit-scrollbar {
+    display:none;
+}
 
 h3 {
     font-family: "GothicA1-Black";
@@ -360,6 +366,7 @@ header {
 }
 .tech-menu-contents {
     display: flex;
+    align-items: center;
     width: 1200px;
     height: 338px;
     background-color: var(--main-color);
@@ -424,12 +431,6 @@ video {
 .in-out-right {
     transform: translateX(200px);
     opacity: 0;
-}
-.main-color {
-    color: var(--main-color);
-}
-.gray-color {
-    color: var(--gray-color);
 }
 
 
@@ -603,7 +604,7 @@ footer {
     align-items: flex-start;
     justify-content: space-between;
     width: 1200px;
-    padding-bottom: 100px;
+    padding-bottom: 160px;
 }
 .sns-icon {
     width: 392px;
@@ -623,7 +624,6 @@ footer {
 }
 .footer-menu {
     display: flex;
-    height: 23px;
     margin-bottom: 24px;
 }
 .footer-menu>li {
@@ -969,6 +969,56 @@ footer {
     }
 
 
+    .taekwondo-tech>h3 {
+        font-size: 48px;
+    }
+    .taekwondo-tech-menu {
+        margin-bottom: 20px;
+        width: 240px;
+    }
+    .taekwondo-tech-menu>li {
+        font-size: 28px;
+    }
+    .tech-menu-contents {
+        width: 720px;
+        height: 405px;
+    }
+    .tech-menu-moniter {
+        position: relative;
+        width: 720px;
+        height: 160px;
+        opacity: 0.6;
+    }
+    .tech-menu-slide {
+        width: 720px;
+        height: 160px;
+        position: relative;
+    }
+    .menu-slide {
+        width: 720px;
+        height: 160px;
+    }
+    .menu-slide>h4 {
+        display: none;
+    }
+    .menu-slide>p {
+        font-size: 28px;
+    }
+    .tech-video-moniter {
+        position: absolute;
+        width: 720px;
+    }
+    .tech-video-slide {
+        width: 720px;
+        height: 405px;
+        position: relative;
+    }
+    video {
+        width: 720px;
+        height: 405px;
+    }
+
+
     .more-menu h3 {
         font-size: 28px;
         margin-bottom: 32px;
@@ -1051,9 +1101,6 @@ footer {
     .associtaion-buttons {
         width: 720px;
     }
-    .associtaion-sponser h3 {
-        font-size: 24px;
-    }
     
     .sponser {
         display: flex;
@@ -1085,13 +1132,290 @@ footer {
         width: 136px;
     }
     .sns-icon {
-        width: 320px;
-        height: 36px;
+        height: 46px;
     }
     .sns-icon img {
-        width: 36px;
+        width: 46px;
     }
     .menu-copyright {
         width: 720px;
+    }
+    .footer-menu>li {
+        margin-right: 16px;
+    }
+    .footer-menu>li>a {
+        font-size: 14px;
+    }
+    .menu-copyright>p {
+        font-size: 14px;
+    }
+    .address {
+        margin-bottom: 16px;
+    }
+}
+
+
+@media screen and (max-width: 740px) {
+    .main-logo {
+        width: 182px;
+        height: 59px;
+    }
+    .main-logo img {
+        width: 182px;
+        height: 59px;
+    }
+
+
+    .business-goal>h3 {
+        padding-bottom: 24px;
+        width: 304px;
+        font-size: 24PX;
+    }
+    .business-goal-moniter {
+        width: 304px;
+    }
+    .business-goal-slide {
+        width: 304px;
+    }
+    .goal-slide {
+        width: 304px;
+        height: 89px;
+        margin-bottom: 8px;
+    }
+    .goal-slide>p {
+        font-size: 20px;
+    }
+
+
+    .what-is-contents {
+        padding-top: 40px;
+        width: 304px;
+    }
+    .taekwondo-is {
+        width: 304px;
+        height: 82px;
+        background-size: 304px 82px;
+    }
+    .taekwondo-is>.sub {
+        display: none;
+    }
+    .taekwondo-is:hover {
+        cursor: pointer;
+    }
+    .taekwondo-is:hover>.sub {
+        display: none;
+    }
+    .taekwondo-is:hover>h3 {
+        display: block;
+    }
+    .taekwondo-is>h3 {
+        margin: 0 auto;
+        font-size: 24px;
+    }
+    .what-as {
+        width: 304px;
+        height: 82px;
+    }
+    .what-as h3 {
+        font-size: 18px;
+    }
+    .what-as .sub {
+        display: none;
+    }
+    .as-something {
+        width: 100px;
+        height: 82px;
+        background-size: 100px 82px;
+    }
+    .as-something:hover {
+        cursor: pointer;
+    }
+    .as-something:hover .sub {
+        display: none;
+    }
+    .as-something:hover h3 {
+        display: block;
+    }
+
+
+    .taekwondo-tech>h3 {
+        font-size: 36px;
+    }
+    .taekwondo-tech-menu {
+        width: 200px;
+    }
+    .taekwondo-tech-menu>li {
+        font-size: 20px;
+    }
+    .tech-menu-contents {
+        width: 304px;
+        height: 171px;
+    }
+    .tech-menu-moniter {
+        width: 304px;
+        height: 80px;
+    }
+    .tech-menu-slide {
+        width: 304px;
+        height: 80px;
+    }
+    .menu-slide {
+        width: 304px;
+        height: 80px;
+    }
+    .menu-slide>p {
+        font-size: 16px;
+    }
+    .tech-video-moniter {
+        width: 304px;
+    }
+    .tech-video-slide {
+        width: 304px;
+        height: 171px;
+    }
+    video {
+        width: 304px;
+        height: 171px;
+    }
+
+
+    .more-menu h3 {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+    .more-menu-contents {
+        padding-top: 150px;
+        width: 304px;
+    }
+    .other-menu {
+        width: 304px;
+        margin-bottom: 20px;
+    }
+    .other-menu>li {
+        width: 304px;
+        height: 80px;
+    }
+    .other-menu>li>a {
+        width: 304px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 20px;
+    }
+    
+    .performance-video-menu {
+        width: 304px;
+    }
+    .performance-video-menu>li {
+        width: 304px;
+        height: 80px;
+        background-size: 304px 80px;
+    }
+    .performance-video-menu>li>a {
+        width: 304px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 20px;
+    }
+
+
+    .associtaion-sponser h3 {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+    .associtaion {
+        width: 304px;
+    }
+    .associtaion-menu-moniter {
+        width: 304px;
+        height: 20px;
+        overflow: hidden;
+    }
+    .associtaion-all-slide {
+        width: 304px;
+    }
+    .associtaion-slide {
+        width: 304px;
+        height: 20px;
+        padding-bottom: 4px;
+    }
+    .associtaion-slide img {
+        width: 72px;
+    }
+    .associtaion-buttons {
+        width: 304px;
+    }
+    .associtaion-buttons figure {
+        width: 30px;
+        height: 30px;
+    }
+    .associtaion-buttons img {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .sponser {
+        width: 304px;
+    }
+    .sponser-menu {
+        flex-direction: column;
+        width: 304px;
+        height: 210px;
+    }
+    .sponser-menu {
+        margin-bottom: 8px;
+    }
+    .sponser {
+        width: 304px;
+    }
+    .sponser-menu {
+        width: 304px;
+    }
+    .sponser-menu img {
+        width: 304px;
+    }
+
+
+    .footer-contents {
+        width: 304px;
+    }
+    .logo-sns {
+        width: 304px;
+        align-items: center;
+        flex-direction: column;
+    }
+    .footer-logo img {
+        width: 136px;
+    }
+    .sns-icon {
+        padding-top: 40px;
+        width: 304px;
+        height: 46px;
+    }
+    .sns-icon img {
+        width: 46px;
+    }
+    .menu-copyright {
+        width: 304px;
+    }
+    .footer-menu {
+        flex-direction: column;
+    }
+    .footer-menu>li {
+        margin-right: 16px;
+        margin-bottom: 8px;
+    }
+    .footer-menu>li>a {
+        font-size: 14px;
+    }
+    .menu-copyright>p {
+        font-size: 12px;
+    }
+    .address {
+        margin-bottom: 16px;
+    }
+
+    .go-to-main {
+        display: none;
     }
 }
