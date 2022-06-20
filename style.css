@@ -101,10 +101,11 @@ header {
 }
 .nav-bar-menu {
     display: flex;
-    width: 480px;
     justify-content: space-between;
 }
-
+.nav-bar-menu>li {
+    margin-left: 16px;
+}
 .nav-bar-menu>li>a {
     font-size: 20px;
     color: var(--main-color);
@@ -333,6 +334,40 @@ header {
     to {
         opacity: 1;
     }
+}
+.modal-background {
+    z-index: 101;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1e1e1e50;
+}
+.modal {
+    z-index: 102;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 304px;
+    height: 166px;
+    margin-top: 40px;
+    background-color: var(--main-color);
+}
+.modal>p {
+    color: var(--white-color);
+}
+.as-education-modal {
+    display: none;
+}
+.as-fight-modal {
+    display: none;
+}
+.as-work-out-modal {
+    display: none;
+}
+.what-is-modal {
+    display: none;
 }
 
 
@@ -880,6 +915,9 @@ footer {
 }
 
 @media screen and (max-width: 1040px) {
+    .nav-bar {
+        width: 720px;
+    }
     .business-goal {
         display: flex;
         flex-direction: column;
@@ -949,6 +987,7 @@ footer {
     .what-as {
         width: 720px;
         height: 192px;
+        margin-top: 8px;
     }
     .what-as h3 {
         font-size: 32px;
@@ -1166,6 +1205,18 @@ footer {
     }
 
 
+    .nav-bar {
+        max-width: 304px;
+        justify-content: center;
+    }
+    .nav-bar>.nav-logo {
+        margin-left: 0px;
+    }
+    .nav-bar-menu {
+        display: none;
+    }
+
+
     .business-goal>h3 {
         padding-bottom: 24px;
         width: 304px;
@@ -1215,6 +1266,7 @@ footer {
     .what-as {
         width: 304px;
         height: 82px;
+        margin-top: 2px;
     }
     .what-as h3 {
         font-size: 18px;

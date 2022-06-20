@@ -114,6 +114,24 @@ function bussinessGoal() {
 }
 
 
+/* ---------- what-is-modal ---------- */
+const taekIsBtn = document.querySelector(".taekwondo-is");
+const somethingBtns = document.querySelectorAll(".as-something");
+const modalBack = document.querySelectorAll(".modal-background");
+const modal = document.querySelectorAll(".modal");
+
+taekIsBtn.addEventListener("click", modalOn);
+modal[0].addEventListener("click", modalOff);
+
+
+function modalOn() {
+  modalBack[0].style.display = "flex";
+}
+
+function modalOff() {
+  modalBack[0].style.display = "none"
+}
+
 /* ---------- taekwondo-tech ---------- */
 function taekwondoTech() {
   const techBtns = document.querySelector(".taekwondo-tech-menu");
