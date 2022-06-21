@@ -3,21 +3,23 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-    font-family: 'GothicA1-Bold';
+    font-family: 'OTWelcomeRA';
     color: var(--main-color);
 }
+
 @font-face {
-    src: url(fonts/GothicA1-Medium.ttf);
-    font-family: "GothicA1-Medium";
+    font-family: 'OTWelcomeBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-    src: url(fonts/GothicA1-Bold.ttf);
-    font-family: "GothicA1-Bold";
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
-@font-face {
-    src: url(fonts/GothicA1-Black.ttf);
-    font-family: "GothicA1-Black";
-}
+
 :root {
     --main-color: #091569;
     --gray-color: #C1C5C4;
@@ -33,7 +35,7 @@ body::-webkit-scrollbar {
 }
 
 h3 {
-    font-family: "GothicA1-Black";
+    font-family: 'OTWelcomeBA';
 }
 
 
@@ -391,6 +393,7 @@ header {
     width: 240px;
 }
 .taekwondo-tech-menu>li {
+    font-family: 'OTWelcomeBA';
     font-size: 28px;
     transition: 0.2s;
     color: var(--gray-color);
@@ -673,7 +676,6 @@ footer {
 .footer-menu>li>a {
     color: var(--white-color);
     font-size: 16px;
-    font-family: "GothicA1-Medium";
 }
 .footer-menu>li>a:hover {
     opacity: 0.5;
@@ -681,7 +683,6 @@ footer {
 }
 .menu-copyright>p {
     font-size: 16px;
-    font-family: "GothicA1-Medium";
 }
 .address {
     color: var(--white-color);
@@ -1253,46 +1254,35 @@ footer {
         height: 82px;
         background-size: 304px 82px;
     }
-    .taekwondo-is>.sub {
-        display: none;
-    }
-    .taekwondo-is:hover {
-        cursor: pointer;
-    }
-    .taekwondo-is:hover>.sub {
-        display: none;
-    }
-    .taekwondo-is:hover>h3 {
-        display: block;
-    }
     .taekwondo-is>h3 {
-        margin: 0 auto;
         font-size: 24px;
     }
-    .what-as {
+    .taekwondo-is>.sub {
         width: 304px;
         height: 82px;
-        margin-top: 2px;
     }
-    .what-as h3 {
-        font-size: 18px;
-    }
-    .what-as .sub {
-        display: none;
+    .taekwondo-is>.sub>p {
+        font-size: 12px;
     }
     .as-something {
         width: 100px;
         height: 82px;
         background-size: 100px 82px;
     }
-    .as-something:hover {
-        cursor: pointer;
+    .what-as h3 {
+        font-size: 18px;
     }
-    .as-something:hover .sub {
-        display: none;
+    .what-as .sub {
+        width: 304px;
+        height: 82px;
     }
-    .as-something:hover h3 {
-        display: block;
+    .what-as .sub>p {
+        font-size: 4px;
+    }
+    .what-as {
+        width: 304px;
+        height: 82px;
+        margin-top: 2px;
     }
 
 

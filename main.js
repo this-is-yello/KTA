@@ -156,7 +156,7 @@ function taekwondoTech() {
   let moveCheck = true;
   let index = 1;
   
-  // techBtns.children[index-1].style.color = "#091569";
+  techBtns.children[index-1].style.color = "#091569";
 
   for (let i = 0; i < techBtns.childElementCount; i++) {
     techBtns.children[i].addEventListener("click", () => {
