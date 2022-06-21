@@ -1,6 +1,6 @@
 window.onload = function() {
   header();
-  // bussinessGoal();
+  bussinessGoal();
   taekwondoTech();
   associtaion();
   goToMain();
@@ -69,10 +69,26 @@ function bussinessGoal() {
 
   let num = 1;
   goalMoniter.children[0].style.transform = "translateX(-" + num * 100 + "vw)";
+  
+    let inter = setInterval(() => {
+      goNext();
+    }, 3000);
 
-  let inter = setInterval(() => {
-    goNext();
-  }, 3000);
+  window.addEventListener('resize', () => {
+    clearInterval(inter);
+    
+    if (window.innerWidth >= 1040) {
+      goalSlide.firstChild.nextSibling.style.display = "flex";
+      goalSlide.lastChild.style.display = "flex";
+      inter = setInterval(() => {
+        goNext();
+      }, 3000);
+    }else {
+      goalSlide.firstChild.nextSibling.style.display = "none";
+      goalSlide.lastChild.style.display = "none";
+      goalMoniter.children[0].style.transform = "none";
+    }
+  });
 
   function goPast() {
     if (moveCheck) {
@@ -140,7 +156,7 @@ function taekwondoTech() {
   let moveCheck = true;
   let index = 1;
   
-  techBtns.children[index-1].style.color='#091569';
+  // techBtns.children[index-1].style.color = "#091569";
 
   for (let i = 0; i < techBtns.childElementCount; i++) {
     techBtns.children[i].addEventListener("click", () => {
@@ -156,7 +172,6 @@ function taekwondoTech() {
                 if (techSlide.children[j].classList.contains("in-out-right")) {
                   techSlide.children[j].classList.remove("in-out-right");
                   techSlide.children[j].classList.add("in-out-left");
-                  techBtns.children[j].classList.add("main-color");
                 }
 
                 if (menuSlide.children[j].classList.contains("in-out-right")) {
