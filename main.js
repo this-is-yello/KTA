@@ -70,13 +70,13 @@ function bussinessGoal() {
   let num = 1;
   goalMoniter.children[0].style.transform = "translateX(-" + num * 100 + "vw)";
   
-    let inter = setInterval(() => {
-      goNext();
-    }, 3000);
+  let inter = setInterval(() => {
+    goNext();
+  }, 3000);
 
-  window.addEventListener('resize', () => {
-    clearInterval(inter);
-    
+  resizeGoal();
+  
+  function resizeGoal() {
     if (window.innerWidth >= 1040) {
       goalSlide.firstChild.nextSibling.style.display = "flex";
       goalSlide.lastChild.style.display = "flex";
@@ -88,6 +88,12 @@ function bussinessGoal() {
       goalSlide.lastChild.style.display = "none";
       goalMoniter.children[0].style.transform = "none";
     }
+  }
+
+  window.addEventListener('resize', () => {
+    clearInterval(inter);
+    
+    resizeGoal();
   });
 
   function goPast() {
