@@ -5,6 +5,7 @@ window.onload = function() {
   associtaion();
   goToMain();
   onePageSlide();
+  buttons();
 }
 
 /* ---------- header ---------- */
@@ -75,7 +76,7 @@ function bussinessGoal() {
   }, 3000);
 
   resizeGoal();
-  
+
   function resizeGoal() {
     if (window.innerWidth >= 1040) {
       goalSlide.firstChild.nextSibling.style.display = "flex";
@@ -136,33 +137,13 @@ function bussinessGoal() {
 }
 
 
-/* ---------- what-is-modal ---------- */
-const taekIsBtn = document.querySelector(".taekwondo-is");
-const somethingBtns = document.querySelectorAll(".as-something");
-const modalBack = document.querySelectorAll(".modal-background");
-const modal = document.querySelectorAll(".modal");
-
-taekIsBtn.addEventListener("click", modalOn);
-modal[0].addEventListener("click", modalOff);
-
-
-function modalOn() {
-  modalBack[0].style.display = "flex";
-}
-
-function modalOff() {
-  modalBack[0].style.display = "none"
-}
-
 /* ---------- taekwondo-tech ---------- */
 function taekwondoTech() {
   const techBtns = document.querySelector(".taekwondo-tech-menu");
   const techSlide = document.querySelector(".tech-video-slide");
   const menuSlide = document.querySelector(".tech-menu-slide");
   let moveCheck = true;
-  let index = 1;
-  
-  techBtns.children[index-1].style.color = "#091569";
+
 
   for (let i = 0; i < techBtns.childElementCount; i++) {
     techBtns.children[i].addEventListener("click", () => {
@@ -197,6 +178,36 @@ function taekwondoTech() {
         }
       }
     });
+  }
+}
+
+
+/* ---------- taekwondo-tech-btns ---------- */
+function buttons() {
+  let moveCheck = true;
+
+  techMenuBtns = document.querySelectorAll('.tech-menu-buttons');
+  techMenuBtns[0].style.color = "#091569";
+  
+  for (let i = 0; i<techMenuBtns.length; i++) {
+    techMenuBtns[i].addEventListener("click", () => {
+      if(moveCheck){
+        moveCheck=false;
+
+        techMenuBtns[i].style.color = "#091569";
+        clearButton();
+        
+        setTimeout(function(){
+          moveCheck=true;
+        }, 500);
+      }
+    });
+  }
+  
+  function clearButton(){
+    for(let i = 0 ; i < techMenuBtns.length ; i++){
+      techMenuBtns[i].style.color = "#C1C5C4";
+    }
   }
 }
 

@@ -337,40 +337,6 @@ header {
         opacity: 1;
     }
 }
-/* .modal-background {
-    z-index: 101;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #1e1e1e50;
-}
-.modal {
-    z-index: 102;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 304px;
-    height: 166px;
-    margin-top: 40px;
-    background-color: var(--main-color);
-}
-.modal>p {
-    color: var(--white-color);
-}
-.as-education-modal {
-    display: none;
-}
-.as-fight-modal {
-    display: none;
-}
-.as-work-out-modal {
-    display: none;
-}
-.what-is-modal {
-    display: none;
-} */
 
 
 /* --------------- taekwondo-tech --------------- */
@@ -1273,13 +1239,21 @@ footer {
         font-size: 18px;
     }
     .what-as .sub {
+        position: absolute;
         width: 304px;
         height: 82px;
+    }
+    .as-fight .sub {
+        transform: translateX(-102px);
+    }
+    .as-education .sub {
+        transform: translateX(-204px);
     }
     .what-as .sub>p {
         font-size: 4px;
     }
     .what-as {
+        position: relative;
         width: 304px;
         height: 82px;
         margin-top: 2px;
