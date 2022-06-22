@@ -437,10 +437,7 @@ video {
     opacity: 0;
 }
 .main-color {
-    color: var(--main-color);
-}
-.gray-color {
-    color: var(--gray-color);
+    color: var(--main-color) !important;
 }
 
 
@@ -1250,7 +1247,7 @@ footer {
         transform: translateX(-204px);
     }
     .what-as .sub>p {
-        font-size: 4px;
+        font-size: 10px;
     }
     .what-as {
         position: relative;

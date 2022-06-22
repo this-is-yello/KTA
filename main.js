@@ -59,7 +59,6 @@ function bussinessGoal() {
   goalSlide.insertBefore(goalLast, goalSlide.firstElementChild);
 
   const goalSlideWidth = 100;
-
   let moveCheck = true;
 
   goalSlide.style.width = goalSlide.childElementCount * goalSlideWidth + "vw";
@@ -74,26 +73,26 @@ function bussinessGoal() {
   let inter = setInterval(() => {
     goNext();
   }, 3000);
-
+  
   resizeGoal();
 
   function resizeGoal() {
-    if (window.innerWidth >= 1040) {
+    clearInterval(inter);
+    if (window.innerWidth <= 1040) {
+      goalMoniter.children[0].style.transform = "none";
+      goalSlide.firstChild.nextSibling.style.display = "none";
+      goalSlide.lastChild.style.display = "none";
+    }else {
       goalSlide.firstChild.nextSibling.style.display = "flex";
       goalSlide.lastChild.style.display = "flex";
       inter = setInterval(() => {
         goNext();
       }, 3000);
-    }else {
-      goalSlide.firstChild.nextSibling.style.display = "none";
-      goalSlide.lastChild.style.display = "none";
-      goalMoniter.children[0].style.transform = "none";
     }
-  }
-
-  window.addEventListener('resize', () => {
-    clearInterval(inter);
     
+  }
+  
+  window.addEventListener('resize', () => {
     resizeGoal();
   });
 
@@ -187,15 +186,15 @@ function buttons() {
   let moveCheck = true;
 
   techMenuBtns = document.querySelectorAll('.tech-menu-buttons');
-  techMenuBtns[0].style.color = "#091569";
+  techMenuBtns[0].classList.add('main-color');
   
   for (let i = 0; i<techMenuBtns.length; i++) {
     techMenuBtns[i].addEventListener("click", () => {
       if(moveCheck){
         moveCheck=false;
 
-        techMenuBtns[i].style.color = "#091569";
         clearButton();
+        techMenuBtns[i].classList.add('main-color');
         
         setTimeout(function(){
           moveCheck=true;
@@ -206,7 +205,7 @@ function buttons() {
   
   function clearButton(){
     for(let i = 0 ; i < techMenuBtns.length ; i++){
-      techMenuBtns[i].style.color = "#C1C5C4";
+      techMenuBtns[i].classList.remove('main-color');
     }
   }
 }
