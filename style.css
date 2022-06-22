@@ -424,6 +424,10 @@ header {
     left: 0%;
     transition: 0.5s;
 }
+.video-slide img {
+    width: 600px;
+    height: 338px;
+}
 video {
     width: 600px;
     height: 338px;
@@ -791,7 +795,7 @@ footer {
         width: 500px;
         height: 282px;
     }
-    video {
+    .video-slide img {
         width: 500px;
         height: 282px;
     }
@@ -1022,7 +1026,7 @@ footer {
         height: 405px;
         position: relative;
     }
-    video {
+    .video-slide img {
         width: 720px;
         height: 405px;
     }
@@ -1292,7 +1296,7 @@ footer {
         width: 304px;
         height: 171px;
     }
-    video {
+    .video-slide img {
         width: 304px;
         height: 171px;
     }
