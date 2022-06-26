@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: bisque;
+            width: 1000px;
+            height: 80px;
+            overflow: hidden;
+        }
+        .text1 {
+            height: 80px;
+            line-height: 80px;
+            font-size: 40px;
+            animation: text 10s infinite;
+            animation-timing-function: linear;
+        }
+        .text2 {
+            height: 80px;
+            line-height: 80px;
+            font-size: 40px;
+            animation: text 12s infinite;
+            animation-timing-function: linear;
+        }
+        .text3 {
+            height: 80px;
+            line-height: 80px;
+            font-size: 40px;
+            animation: text 11s infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes text {
+    from {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <p class="text1">아무리 그래도 혼밥은 못하겠어?</p>
+        </div>
+        <div class="container">
+            <p class="text2">그럼 밥 메이트랑 같이 먹자!</p>
+        </div>
+        <div class="container">
+            <p class="text3">다들 아는 밥 메이트 하나씩 있잖아?</p>
+        </div>
+    </section>
+</body>
+</html>
