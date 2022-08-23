@@ -41,6 +41,7 @@ header {
     height: 8%;
     z-index: 100;
     background-color: var(--white-color);
+    transition: 0.5s;
 }
 .nav-bar {
     display: flex;
@@ -61,6 +62,11 @@ header {
 }
 .nav-bar-menu li {
     margin-left: 16px;
+    transition: 0.2s;
+}
+.nav-bar-menu li:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 
 
@@ -132,38 +138,27 @@ h4 {
 }
 .business-goal-moniter {
     position: relative;
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
 }
 .business-goal-slide {
     display: flex;
-    width: 300%;
+    width: 500vw;
 }
 .goal-slide {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 120px;
+    width: 100vw;
+}
+.goal-slide img {
+    width: 100vw;
 }
 .goal-slide p {
+    position: absolute;
     font-size: 20px;
     color: var(--white-color);
-}
-.goal-slide-1 {
-    background-image: url(img/goal-1.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-.goal-slide-2 {
-    background-image: url(img/goal-2.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-.goal-slide-3 {
-    background-image: url(img/goal-3.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
 }
 .goal-buttons {
     position: absolute;
@@ -179,6 +174,11 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.2s;
+}
+.goal-buttons figure:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 .goal-buttons img {
     width: 70%;
@@ -208,7 +208,7 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 320px;
+    width: 320px !important;
     height: 100px;
     background-image: url(img/taekwondo-is.png);
     background-size: 320px 100px;
@@ -227,6 +227,11 @@ h4 {
     justify-content: center;
     width: 100px;
     height: 100px;
+    transition: 0.2s;
+}
+.as-something:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 .as-work-out {
     background-image: url(img/as-work-out.png);
@@ -245,6 +250,7 @@ h4 {
     width: 100%;
     height: 100vh;
     background-color: #00000050;
+    display: none;
 }
 .as-something-modal {
     position: absolute;
@@ -261,6 +267,28 @@ h4 {
 .as-something-modal p {
     font-size: 14px;
     color: var(--white-color);
+}
+.exit {
+    position: absolute;
+    top: -16%;
+    right: 8%;
+}
+.exit>span {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: var(--white-color);
+    transition: 0.2s;
+}
+.exit>span:first-child {
+    transform: rotate(45deg);
+}
+.exit>span:last-child {
+    transform: rotate(-45deg);
+}
+.exit:hover span {
+    cursor: pointer;
+    background-color: var(--gray-color);
 }
 
 
@@ -374,11 +402,20 @@ h4 {
     align-items: center;
     justify-content: center;
     background-image: url(img/other-menu.png);
-    background-size: 100px 36px;
+    background-size: 100px 37px;
     width: 100px;
-    height: 36px;
+    height: 37px;
+    transition: 0.2s;
+}
+.other-menu li:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 .other-menu>li>a {
+    width: 100%;
+    height: 100%;
+    line-height: 37px;
+    text-align: center;
     font-size: 12px;
     color: var(--white-color);
 }
@@ -394,6 +431,11 @@ h4 {
     justify-content: center;
     width: 156px;
     height: 37px;
+    transition: 0.2s;
+}
+.performance-video-menu>li:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 .performance-video-menu>li:first-child {
     background-image: url(img/menu-performance.png);
@@ -404,6 +446,9 @@ h4 {
     background-size: 156px 37px;
 }
 .performance-video-menu>li>a {
+    width: 100%;
+    height: 100%;
+    line-height: 37px;
     text-align: center;
     font-size: 12px;
     color: var(--white-color);
@@ -449,6 +494,10 @@ h4 {
 .associtaion-slide li {
     width: 76px;
 }
+.associtaion-slide li:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
 .associtaion-slide a {
     width: 76px;
 }
@@ -458,13 +507,17 @@ h4 {
 .associtaion-buttons {
     display: flex;
     justify-content: center;
-    width: 320px;
     padding-top: 16px;
 }
 .associtaion-buttons figure {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.2s;
+}
+.associtaion-buttons figure:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 .associtaion-buttons img {
     width: 70%;
@@ -473,6 +526,8 @@ h4 {
 .sponser-contents {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 320px;
 }
 .sponser-menu {
@@ -480,6 +535,13 @@ h4 {
     justify-content: space-between;
     width: 100%;
     height: 21px;
+}
+.sponser-menu li {
+    transition: 0.2s;
+}
+.sponser-menu li:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 .sponser-menu img {
     width: 100px;
@@ -516,14 +578,22 @@ footer {
     justify-content: space-between;
     width: 100%;
 }
+.sns-icon li {
+    transition: 0.2s;
+}
 .menu-copyright {
     width: 100%;
 }
 .footer-menu li {
     margin-bottom: 16px;
+    transition: 0.2s;
 }
 .footer-menu li a {
     color: var(--white-color);
+}
+footer li:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 .address {
     color: var(--white-color);
@@ -541,4 +611,12 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    transition: 0.2s;
+}
+.go-to-main figure {
+    transition: 0.2s;
+}
+.go-to-main:hover figure {
+    cursor: pointer;
+    opacity: 0.7;
 }
