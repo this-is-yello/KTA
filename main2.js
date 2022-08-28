@@ -192,10 +192,10 @@ window.onload = function() {
     associtaionSlide.appendChild(associtaionFirst);
     associtaionSlide.insertBefore(associtaionLast, associtaionSlide.firstElementChild);
   
+    setHeight();
     let moveCheck = true;
     let associtaionSlideHeight = associtaionSlide.firstElementChild.offsetHeight;
   
-    setHeight();
   
     const associtaionBtns = document.querySelector(".associtaion-buttons");
     associtaionBtns.children[0].addEventListener("click", goDown);
@@ -226,8 +226,7 @@ window.onload = function() {
     }
   
     function setHeight(){
-      associtaionSlideHeight = associtaionSlide.firstElementChild.offsetHeight;
-      associtaionSlide.style.height = associtaionSlide.childElementCount * associtaionSlideHeight + "px";
+      associtaionSlideHeight = associtaionSlide.offsetHeight;
       console.log(associtaionSlideHeight);
     }
   
