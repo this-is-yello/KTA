@@ -1,14 +1,12 @@
-window.onload = function() {
-    header();
-    businessGoal();
-    taekwondoTech();
-    associtaion();
-    goToMain();
-    onePageSlide();
-    techButtons();
-    whatIsModal();
-}
-  
+associtaion();
+header();
+businessGoal();
+taekwondoTech();
+goToMain();
+onePageSlide();
+techButtons();
+whatIsModal();
+
   /* ---------- header ---------- */
   function header() {
     const header = document.querySelector("header");
@@ -184,56 +182,58 @@ window.onload = function() {
   
   /* ---------- associtaion ---------- */
   function associtaion() {
-    const associtaionMoniter = document.querySelector(".associtaion-menu-moniter");
-    const associtaionSlide = document.querySelector(".associtaion-all-slide");
-  
-    const associtaionFirst = associtaionSlide.firstElementChild.cloneNode(true);
-    const associtaionLast = associtaionSlide.lastElementChild.cloneNode(true);
-    associtaionSlide.appendChild(associtaionFirst);
-    associtaionSlide.insertBefore(associtaionLast, associtaionSlide.firstElementChild);
-  
-    let moveCheck = true;
-    let associtaionSlideHeight = associtaionSlide.firstElementChild.offsetHeight;
-  
-    setHeight();
-  
-    const associtaionBtns = document.querySelector(".associtaion-buttons");
-    associtaionBtns.children[0].addEventListener("click", goDown);
-  
-    let num = 1;
-    associtaionMoniter.children[0].style.transform = "translateY(-" + num * associtaionSlideHeight + "px)";
-  
-    let inter = setInterval(() => {
-      goDown();
-    }, 4000);
-  
-  
-    window.addEventListener('resize', setHeight);
-  
-    function goDown() {
-      if (moveCheck) {
-        num++;
-        moveCheck = false;
-        setTimeout(() => {
-          if (num === associtaionSlide.childElementCount - 1) {
-            num = 1;
-            moveSlide(0);
-          }
-          moveCheck = true;
-        }, 1000);
-        moveSlide(1);
-      }
-    }
-  
-    function setHeight(){
-      associtaionSlideHeight = associtaionSlide.firstElementChild.offsetHeight;
-      associtaionSlide.style.height = associtaionSlide.childElementCount * associtaionSlideHeight + "px";
-      console.log(associtaionSlideHeight);
-    }
-  
-    function moveSlide(time) {
-      associtaionSlide.style.transition = time + "s";
+    window.onload = function() {
+      const associtaionMoniter = document.querySelector(".associtaion-menu-moniter");
+      const associtaionSlide = document.querySelector(".associtaion-all-slide");
+    
+      const associtaionFirst = associtaionSlide.firstElementChild.cloneNode(true);
+      const associtaionLast = associtaionSlide.lastElementChild.cloneNode(true);
+      associtaionSlide.appendChild(associtaionFirst);
+      associtaionSlide.insertBefore(associtaionLast, associtaionSlide.firstElementChild);
+    
+      let moveCheck = true;
+      let associtaionSlideHeight = associtaionSlide.firstElementChild.offsetHeight;
+    
+      setHeight();
+    
+      const associtaionBtns = document.querySelector(".associtaion-buttons");
+      associtaionBtns.children[0].addEventListener("click", goDown);
+    
+      let num = 1;
       associtaionMoniter.children[0].style.transform = "translateY(-" + num * associtaionSlideHeight + "px)";
+    
+      let inter = setInterval(() => {
+        goDown();
+      }, 4000);
+    
+    
+      window.addEventListener('resize', setHeight);
+    
+      function goDown() {
+        if (moveCheck) {
+          num++;
+          moveCheck = false;
+          setTimeout(() => {
+            if (num === associtaionSlide.childElementCount - 1) {
+              num = 1;
+              moveSlide(0);
+            }
+            moveCheck = true;
+          }, 1000);
+          moveSlide(1);
+        }
+      }
+    
+      function setHeight(){
+        associtaionSlideHeight = associtaionSlide.firstElementChild.offsetHeight;
+        associtaionSlide.style.height = associtaionSlide.childElementCount * associtaionSlideHeight + "px";
+        console.log(associtaionSlideHeight);
+      }
+    
+      function moveSlide(time) {
+        associtaionSlide.style.transition = time + "s";
+        associtaionMoniter.children[0].style.transform = "translateY(-" + num * associtaionSlideHeight + "px)";
+      }
     }
   }
   
